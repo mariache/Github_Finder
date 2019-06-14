@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./components/layout/Navbar";
 import Users from "./components/users/Users";
 import axios from "axios";
+import { Search } from "./components/users/Search";
 
 //rce as a shortcut
 export default class App extends Component {
@@ -25,6 +26,7 @@ export default class App extends Component {
       <div className="App">
         <Navbar />
         <div className="container">
+          <Search />
           <Users users={users} loading={loading} />
         </div>
       </div>
