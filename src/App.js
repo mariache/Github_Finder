@@ -4,12 +4,14 @@ import Navbar from "./components/layout/Navbar";
 import Users from "./components/users/Users";
 import axios from "axios";
 import { Search } from "./components/users/Search";
+import Alert from "./components/layout/Alert";
 
 //rce as a shortcut
 export default class App extends Component {
   state = {
     users: [],
-    loading: false
+    loading: false,
+    alert: null
   };
   async componentDidMount() {
     this.setState({ loading: true });
@@ -21,14 +23,22 @@ export default class App extends Component {
   }
 
   searchUsers = async text => {
-    if (text.length > 0) {
-      this.setState({ loading: true });
-      const res = await axios.get(`https://api.github.com/search/users?q=${text}&client_id=
+    this.setState({ loading: true });
+    const res = await axios.get(`https://api.github.com/search/users?q=${text}&client_id=
     ${process.env.REACT_APP_GITHB_CLIENT_ID}&client_secret=
     ${process.env.REACT_APP_GITHB_CLIENT_SECRET}`);
 
-      this.setState({ users: res.data.items, loading: false });
-    }
+    this.setState({ users: res.data.items, loading: false });
+  };
+
+  setAlert = (msg, type) => {
+    this.setState({
+      alert: {
+        msg: msg,
+        type: type
+      }
+    });
+    setTimeout(() => this.setState({ alert: null }), 2000);
   };
 
   clearUsers = () => {
@@ -36,15 +46,17 @@ export default class App extends Component {
   };
 
   render() {
-    const { users, loading } = this.state;
+    const { users, loading, alert } = this.state;
     return (
       <div className="App">
         <Navbar />
         <div className="container">
+          <Alert alert={alert} />
           <Search
             searchUsers={this.searchUsers}
             clearUsers={this.clearUsers}
             showClear={users.length > 0 ? true : false}
+            setAlert={this.setAlert}
           />
           <Users users={users} loading={loading} />
         </div>
