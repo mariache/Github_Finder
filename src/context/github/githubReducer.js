@@ -11,6 +11,7 @@ export default (state, action) => {
     case SET_LOADING:
       return {
         ...state,
+        users: [],
         loading: true
       };
     case SEARCH_USERS:
@@ -18,6 +19,24 @@ export default (state, action) => {
         ...state,
         users: action.payload,
         loading: false
+      };
+    case GET_USER:
+      return {
+        ...state,
+        user: action.payload,
+        loading: false
+      };
+    case CLEAR_USERS:
+      return {
+        ...state,
+        users: [],
+        loading: false
+      };
+    case GET_REPOS:
+      return {
+        ...state,
+        repos: action.payload,
+        loadind: false
       };
     default:
       return state;
