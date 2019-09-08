@@ -117,8 +117,8 @@ img {
 }
 
 .card:hover {
-    border: 1px solid #666;
-    border-radius: 5px;
+  border: 1px solid #666;
+  border-radius: 5px;
 }
 
 /* List */
@@ -134,24 +134,31 @@ img {
 .p {
   padding: 0.5rem;
 }
+
 .p-1 {
   padding: 1rem;
 }
+
 .p-2 {
   padding: 2rem;
 }
+
 .p-3 {
   padding: 3rem;
 }
+
 .py {
   padding: 0.5rem 0;
 }
+
 .py-1 {
   padding: 1rem 0;
 }
+
 .py-2 {
   padding: 2rem 0;
 }
+
 .py-3 {
   padding: 3rem 0;
 }
@@ -160,24 +167,31 @@ img {
 .m {
   margin: 0.5rem;
 }
+
 .m-1 {
   margin: 1rem;
 }
+
 .m-2 {
   margin: 2rem;
 }
+
 .m-3 {
   margin: 3rem;
 }
+
 .my {
   margin: 0.5rem 0;
 }
+
 .my-1 {
   margin: 1rem 0;
 }
+
 .my-2 {
   margin: 2rem 0;
 }
+
 .my-3 {
   margin: 3rem 0;
 }
@@ -387,6 +401,12 @@ table th {
   grid-gap: 1rem;
 }
 
+@media (max-width: 1024px) {
+  .usersGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* Mobile Styles */
 @media (max-width: 700px) {
   .hide-sm {
@@ -395,13 +415,13 @@ table th {
 
   .grid-2,
   .grid-3,
-  .grid-4{
+  .grid-4 {
     grid-template-columns: 1fr;
   }
-  
+
   .usersGrid {
-  grid-template-columns: repeat(2, 1fr);
-  }  
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   /* Text Styles */
   .x-large {
@@ -433,11 +453,3 @@ table th {
     grid-template-columns: 1fr;
   }
 }
-
-@media (max-width: 1024px) {
-  .usersGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-
