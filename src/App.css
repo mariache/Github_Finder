@@ -381,6 +381,10 @@ table th {
   display: flex;
 }
 
+.navbar .fa-github {
+    margin-right: 10px;
+}
+
 .navbar a {
   color: #fff;
   padding: 0.45rem;
