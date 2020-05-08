@@ -2,11 +2,12 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #dc3545;
+  --primary-color: #24292e;
+  --secondary-color: #586069;
   --dark-color: #333333;
-  --light-color: #f4f4f4;
+  --light-color: #eff3f6;
   --danger-color: #dc3545;
-  --success-color: #28a745;
+  --success-color: #279f43;
 }
 
 * {
@@ -24,12 +25,12 @@ body {
 }
 
 a {
-  color: var(--primary-color);
+  color: #0366d6;
   text-decoration: none;
 }
 
 a:hover {
-  color: #666;
+  text-decoration: underline;
 }
 
 ul {
@@ -42,10 +43,16 @@ img {
 
 /* Utilities */
 .container {
-  max-width: 1100px;
-  margin: auto;
+  max-width: 1280px;
+  margin: 0 auto 2rem;
   overflow: hidden;
   padding: 0 2rem;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Text Styles*/
@@ -72,6 +79,11 @@ img {
 
 .text-primary {
   color: var(--primary-color);
+}
+
+.text-secondary {
+  font-size: 0.8rem;
+  color: var(--secondary-color);
 }
 
 .text-dark {
@@ -112,13 +124,26 @@ img {
 /* Cards */
 .card {
   padding: 1rem;
-  border: #ccc 1px dotted;
   margin: 0.7rem 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: auto;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1.6px 3.6px 0px, rgba(0, 0, 0, 0.15) 0px 0.3px 0.9px 0px;
+  background-color: #fff;
 }
 
-.card:hover {
-  border: 1px solid #666;
-  border-radius: 5px;
+.card-repo-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  grid-gap: 1rem;
+}
+
+.repo:hover {
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 1.6px 3.6px 0px, rgba(0, 0, 0, 0.45) 0px 0.3px 0.9px 0px;
+  transform: scale(1.025);
 }
 
 /* List */
@@ -196,6 +221,20 @@ img {
   margin: 3rem 0;
 }
 
+i {
+  margin-right: 10px;
+}
+
+i.far.fa-user {
+  width: 1.1rem;
+  margin-left: 0.2rem;
+}
+
+.fa-check,
+.fa-times-circle {
+  margin-left: 10px
+}
+
 /* Grid */
 .grid-2 {
   display: grid;
@@ -226,6 +265,30 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+}
+
+.btn-ghb {
+  position: relative;
+  display: inline-block;
+  color: #24292e;
+  background-color: #eff3f6;
+  background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-repeat: repeat-x;
+  background-position: -1px -1px;
+  background-size: 110% 110%;
+  border: 1px solid rgba(27, 31, 35, .2);
+  border-radius: .25em;
 }
 
 .btn-link {
@@ -277,7 +340,8 @@ img {
 .badge-light,
 .alert-light {
   background: var(--light-color);
-  color: #333;
+  color: #24292e;
+  background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
 }
 
 .btn-dark,
@@ -296,12 +360,22 @@ img {
   color: #fff;
 }
 
+.btn-danger,
+.bg-danger,
+.badge-danger,
+.alert-danger {
+  background: var(--danger-color);
+  color: #fff;
+}
+
 .btn-success,
 .bg-success,
 .badge-success,
 .alert-success {
   background: var(--success-color);
   color: #fff;
+  border-color: rgba(27, 31, 35, .5);
+  box-shadow: inset 0 0.15em 0.3em rgba(27, 31, 35, .15);
 }
 
 .btn-white,
@@ -382,13 +456,15 @@ table th {
 }
 
 .navbar .fa-github {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .navbar a {
   color: #fff;
   padding: 0.45rem;
   margin: 0 0.25rem;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .navbar a:hover {
@@ -408,6 +484,13 @@ table th {
 @media (max-width: 1024px) {
   .usersGrid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card-repo-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    grid-gap: 1rem;
   }
 }
 
@@ -450,10 +533,24 @@ table th {
     text-align: center;
     justify-content: center;
   }
+
+  .card-repo-wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 175px);
+    grid-gap: 0.1rem;
+  }
 }
 
 @media (max-width: 425px) {
   .usersGrid {
     grid-template-columns: 1fr;
+  }
+
+  .card-repo-wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 175px);
+    grid-gap: 0.1rem;
   }
 }

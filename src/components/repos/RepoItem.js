@@ -11,6 +11,7 @@ const RepoItem = ({ repo: { name, language, html_url, description } }) => {
       }}
     >
       <div style={{ fontWeight: 600 }}>
+        <i className="fab fa-buffer"></i>{" "}
         <a href={html_url} target="_blank" rel="noopener noreferrer">
           {name
             .toLowerCase()
@@ -20,11 +21,11 @@ const RepoItem = ({ repo: { name, language, html_url, description } }) => {
         </a>
       </div>
       {description && (
-        <p className="text-secondary" style={{ margin: "8px 0px 16px" }}>
+        <p className="text-secondary" style={{ margin: "0.5rem 0px" }}>
           {description}
         </p>
       )}
-      <p className="text-secondary">
+      <p className="text-secondary" style={{ margin: "0.5rem 0px" }}>
         <span>{language ? language : ""}</span>
       </p>
     </div>
