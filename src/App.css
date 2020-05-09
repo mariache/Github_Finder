@@ -20,13 +20,14 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
+  background-color: #fafbfc;
   color: #333;
 }
 
 a {
   color: #0366d6;
   text-decoration: none;
+  word-break: break-all;
 }
 
 a:hover {
@@ -280,10 +281,6 @@ i.far.fa-user {
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   background-repeat: repeat-x;
   background-position: -1px -1px;
   background-size: 110% 110%;
@@ -552,5 +549,9 @@ table th {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(6, 175px);
     grid-gap: 0.1rem;
+  }
+
+  .repo {
+    overflow-x: auto;
   }
 }

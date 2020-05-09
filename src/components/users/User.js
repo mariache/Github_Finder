@@ -34,15 +34,10 @@ const User = ({ match }) => {
 
   return (
     <>
-      <Link to="/" className="btn btn-light">
+      <Link to="/" className="btn-ghb">
+        <i className="fas fa-angle-double-left"></i>
         Back to search
       </Link>
-      Hireable:{" "}
-      {hireable ? (
-        <i className="fas fa-check text-success" />
-      ) : (
-        <i className="fas fa-times-circle text-danger" />
-      )}
       <div className="card grid-2">
         <div className="all-center">
           <img
@@ -52,7 +47,17 @@ const User = ({ match }) => {
             style={{ width: "150px" }}
           />
           <h1>{name}</h1>
-          <p>Location: {location}</p>
+          <p>
+            Hireable:
+            {hireable ? (
+              <i className="fas fa-check text-success" />
+            ) : (
+              <i className="fas fa-times-circle text-danger" />
+            )}
+          </p>
+          <p>
+            <i className="fas fa-map-marker-alt"></i>Location: {location}
+          </p>
         </div>
         <div>
           {bio && (
@@ -61,13 +66,19 @@ const User = ({ match }) => {
               <p>{bio}</p>
             </>
           )}
-          <a href={html_url} className="btn btn-light my-1">
+          <a
+            href={html_url}
+            className="btn-ghb my-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Visit Github Profile
           </a>
           <ul>
             <li>
               {login && (
                 <>
+                  <i className="far fa-user"></i>
                   <strong>Username: </strong> {login}
                 </>
               )}
@@ -75,6 +86,7 @@ const User = ({ match }) => {
             <li>
               {company && (
                 <>
+                  <i className="fas fa-laptop-code"></i>
                   <strong>Company: </strong> {company}
                 </>
               )}
@@ -82,7 +94,7 @@ const User = ({ match }) => {
             <li>
               {email && (
                 <>
-                  <strong>Email: </strong>
+                  <i className="far fa-envelope"></i> <strong>Email: </strong>
                   <a href={`mailto:${email}`}>{email}</a>
                 </>
               )}
@@ -90,7 +102,7 @@ const User = ({ match }) => {
             <li>
               {blog && (
                 <>
-                  <strong>Website: </strong>
+                  <i className="fas fa-link"></i> <strong>Website: </strong>
                   <a href={blog} target="_blank" rel="noopener noreferrer">
                     {blog}
                   </a>
@@ -98,7 +110,7 @@ const User = ({ match }) => {
               )}
             </li>
             <li>
-              <div className="card text-center">
+              <div className="">
                 <div className="badge badge-primary">
                   Followers: {followers}
                 </div>
