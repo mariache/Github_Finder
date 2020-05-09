@@ -466,6 +466,7 @@ table th {
 
 .navbar a:hover {
   color: var(--light-color);
+  text-decoration: none;
 }
 
 .navbar .welcome span {
