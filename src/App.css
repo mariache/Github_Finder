@@ -56,6 +56,12 @@ img {
   align-items: center;
 }
 
+.flex-column {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
 /* Text Styles*/
 .x-large {
   font-size: 4rem;
@@ -138,6 +144,16 @@ img {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 200px);
   grid-gap: 1rem;
+}
+
+.repo {
+  padding: 0.5rem 1rem;
+  margin: 0.7rem 0;
+  width: 100%;
+  height: auto;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1.6px 3.6px 0px,
+    rgba(0, 0, 0, 0.15) 0px 0.3px 0.9px 0px;
+  background-color: #fff;
 }
 
 .repo:hover {
@@ -548,5 +564,9 @@ table th {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 0.1rem;
+  }
+
+  .repo {
+    overflow-x: scroll;
   }
 }

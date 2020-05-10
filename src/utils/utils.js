@@ -44,3 +44,6 @@ export const languageColor = (lang) => {
       return "#EDEDED";
   }
 };
+
+export const truncateText = (string, number) =>
+  string.length > 75 ? `${string.substring(0, number)}...` : string;
