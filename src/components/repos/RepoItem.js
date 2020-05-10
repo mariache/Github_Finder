@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { languageColor } from "../../utils/utils";
+import { languageColor, truncateText } from "../../utils/utils";
 import moment from "moment";
 
 const RepoItem = ({
@@ -14,15 +14,11 @@ const RepoItem = ({
     forks_count,
   },
 }) => {
-  const truncateDescription = (string) =>
-    string.length > 75 ? `${string.substring(0, 75)}...` : string;
-
   return (
     <div
-      className="card repo"
+      className="repo flex-column"
       style={{
         borderLeft: `25px solid ${languageColor(language)} `,
-        position: "relative",
       }}
     >
       <div style={{ fontWeight: 600 }}>
@@ -42,38 +38,30 @@ const RepoItem = ({
       </div>
       {description && (
         <p className="text-secondary" style={{ margin: "0.5rem 0px" }}>
-          {truncateDescription(description)}
+          {truncateText(description, 150)}
         </p>
       )}
       <p className="text-secondary" style={{ margin: "0.5rem 0px" }}>
         <span>{language ? language : ""}</span>
       </p>
-      <p
-        className="text-secondary"
-        style={{
-          position: "absolute",
-          bottom: 0,
-          display: "flex",
-          justifyContent: "space-between",
-          flexDirection: "column",
-        }}
-      >
-        <span>
+      <p className="text-secondary flex-column">
+        <div>
           <span style={{ marginRight: "1rem" }}>
-            <i className="fas fa-star" style={{ marginRight: "0.3rem" }}></i>
+            <i
+              className="fas fa-star"
+              style={{ marginRight: "0.3rem", color: "#F08700" }}
+            ></i>
             {stargazers_count}
           </span>
           <span>
             <i
               className="fas fa-code-branch"
-              style={{ marginRight: "0.3rem" }}
+              style={{ marginRight: "0.3rem", color: "#00A9A5" }}
             ></i>
             {forks_count}
           </span>
-        </span>
-        <span style={{ marginRight: "1rem" }}>
-          Last update: {moment(updated_at).format("YYYY-MM-DD")}
-        </span>
+        </div>
+        <div>Last update: {moment(updated_at).format("YYYY-MM-DD")}</div>
       </p>
     </div>
   );
