@@ -303,6 +303,14 @@ i.far.fa-user {
   border-radius: 0.25em;
 }
 
+.btn-ghb:hover {
+  background-color: #e6ebf1;
+  background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
+  background-position: -0.5em;
+  border-color: rgba(27, 31, 35, 0.35);
+  text-decoration: none;
+}
+
 .btn-link {
   background: none;
   padding: 0;
@@ -320,15 +328,33 @@ i.far.fa-user {
   margin-right: 0.2rem;
 }
 
-.badge {
-  display: inline-block;
+ul .badge-wrapper {
+  display: inline;
+  margin-right: 1rem;
+}
+
+.badge-wrapper {
+  display: block;
   font-size: 0.8rem;
-  padding: 0.2rem 0.7rem;
+  position: relative;
+  padding: 0.2rem;
+  height: 26px;
+  line-height: 26px;
+  text-decoration: none;
   text-align: center;
-  margin: 0.3rem;
-  background: var(--light-color);
-  color: #333;
-  border-radius: 5px;
+  border: 1px solid rgba(27, 31, 35, 0.2);
+  border-radius: 0.3em;
+}
+
+.badge {
+  display: block;
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  line-height: 16px;
+  height: 16px;
+  padding: 0 5px;
+  border-radius: 10px;
 }
 
 .alert {

@@ -109,18 +109,25 @@ const User = ({ match }) => {
                 </>
               )}
             </li>
-            <li>
-              <div className="">
-                <div className="badge badge-primary">
-                  Followers: {followers}
-                </div>
-                <div className="badge badge-success">
-                  Following: {following}
-                </div>
-                <div className="badge badge-danger">
-                  Public Repos: {public_repos}
-                </div>
-              </div>
+          </ul>
+          <ul style={{ marginTop: "1rem" }}>
+            <li className="badge-wrapper">
+              Followers
+              <span class="badge" style={{ backgroundColor: "#FFC6AC" }}>
+                {followers}
+              </span>
+            </li>
+            <li className="badge-wrapper">
+              Following
+              <span class="badge green" style={{ backgroundColor: "#BBDEF0" }}>
+                {following}
+              </span>
+            </li>
+            <li className="badge-wrapper">
+              Public Repos
+              <span class="badge yellow" style={{ backgroundColor: "#DEEFB7" }}>
+                {public_repos}
+              </span>
             </li>
           </ul>
         </div>
