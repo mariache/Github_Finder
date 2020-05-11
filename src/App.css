@@ -594,5 +594,10 @@ table th {
 
   .repo {
     overflow-x: scroll;
+    line-height: 1;
+  }
+
+  .badge-wrapper {
+    font-size: 0.6rem;
   }
 }
