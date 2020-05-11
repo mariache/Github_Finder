@@ -72,7 +72,7 @@ const User = ({ match }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Visit Github Profile
+            Visit Github profile
           </a>
           <ul>
             <li>
@@ -124,7 +124,7 @@ const User = ({ match }) => {
               </span>
             </li>
             <li className="badge-wrapper">
-              Public Repos
+              Public repos
               <span class="badge yellow" style={{ backgroundColor: "#DEEFB7" }}>
                 {public_repos}
               </span>
