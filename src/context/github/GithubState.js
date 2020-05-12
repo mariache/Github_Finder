@@ -8,6 +8,7 @@ import {
   CLEAR_USERS,
   GET_REPOS,
   SET_LOADING,
+  GET_PAGINATED_REPOS,
 } from "../constants";
 
 let githubClientId;
@@ -61,9 +62,21 @@ const GithubState = (props) => {
     });
   };
 
-  const getUserRepos = async (username) => {
+  const getPaginatedUserRepos = async (username) => {
     setLoading();
     const res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=6&sort=created:asc&client_id=
+    ${githubClientId}&client_secret=
+    ${githubClientSecret}`);
+
+    dispatch({
+      type: GET_PAGINATED_REPOS,
+      payload: res.data,
+    });
+  };
+
+  const getUserRepos = async (username) => {
+    setLoading();
+    const res = await axios.get(`https://api.github.com/users/${username}/repos?client_id=
     ${githubClientId}&client_secret=
     ${githubClientSecret}`);
 
@@ -86,6 +99,7 @@ const GithubState = (props) => {
         clearUsers,
         getUser,
         getUserRepos,
+        getPaginatedUserRepos,
       }}
     >
       {props.children}
