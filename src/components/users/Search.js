@@ -7,20 +7,20 @@ const Search = () => {
   const githubContext = useContext(GithubContext);
   const alertContext = useContext(AlertContext);
 
-  const [text, setText] = useState("");
+  const [search, setSearch] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (text === "") {
+    if (search === "") {
       alertContext.setAlert("Please enter something", "light");
     } else {
-      githubContext.searchUsers(text);
-      setText("");
+      githubContext.searchUsers(search);
+      setSearch("");
     }
   };
 
   const onChange = (e) => {
-    setText(e.target.value);
+    setSearch(e.target.value);
   };
 
   return (
@@ -30,7 +30,7 @@ const Search = () => {
           type="text"
           name="text"
           placeholder="Search users..."
-          value={text}
+          value={search}
           onChange={onChange}
         />
         <input
