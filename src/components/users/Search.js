@@ -6,6 +6,7 @@ import AlertContext from "../../context/alert/alertContext";
 const Search = () => {
   const githubContext = useContext(GithubContext);
   const alertContext = useContext(AlertContext);
+  const { clearUsers, users } = githubContext;
 
   const [search, setSearch] = useState("");
 
@@ -39,11 +40,8 @@ const Search = () => {
           className="btn btn-dark btn-block"
         />
       </form>
-      {githubContext.users.length > 0 && (
-        <button
-          className="btn btn-light btn-block"
-          onClick={githubContext.clearUsers}
-        >
+      {users.length > 0 && (
+        <button className="btn btn-light btn-block" onClick={clearUsers}>
           Clear result
         </button>
       )}
