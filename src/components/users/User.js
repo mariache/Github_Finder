@@ -1,12 +1,20 @@
 import React, { useEffect, useContext } from "react";
-import Spinner from "../layout/Spinner";
-import { Link } from "react-router-dom";
+import Spinner from "../layout/Spinner/Spinner";
+import { useHistory } from "react-router-dom";
 import Repos from "../repos/Repos";
 import GithubContext from "../../context/github/githubContext";
 
 const User = ({ match }) => {
+  const history = useHistory();
   const githubContext = useContext(GithubContext);
-  const { user, loading, getUser, repos, getUserRepos } = githubContext;
+  const {
+    user,
+    loading,
+    getUser,
+    repos,
+    getUserRepos,
+    clearUser,
+  } = githubContext;
 
   useEffect(() => {
     getUser(match.params.login);
@@ -30,14 +38,19 @@ const User = ({ match }) => {
     hireable,
   } = user;
 
+  const onHandleBack = () => {
+    history.push("/");
+    clearUser();
+  };
+
   if (loading) return Spinner;
 
   return (
     <>
-      <Link to="/" className="btn-ghb">
+      <button onClick={onHandleBack} className="btn-ghb">
         <i className="fas fa-angle-double-left"></i>
         Back to search
-      </Link>
+      </button>
       <div className="card grid-2">
         <div className="all-center">
           <img
@@ -55,11 +68,13 @@ const User = ({ match }) => {
               <i className="fas fa-times-circle text-danger" />
             )}
           </p>
-          <p>
-            <i className="fas fa-map-marker-alt"></i>Location: {location}
-          </p>
+          {location && (
+            <p>
+              <i className="fas fa-map-marker-alt"></i>Location: {location}
+            </p>
+          )}
         </div>
-        <div>
+        <div className="flex-column">
           {bio && (
             <>
               <h3>Bio</h3>
@@ -71,6 +86,7 @@ const User = ({ match }) => {
             className="btn-ghb my-1"
             target="_blank"
             rel="noopener noreferrer"
+            style={{ width: "fit-content" }}
           >
             Visit Github profile
           </a>

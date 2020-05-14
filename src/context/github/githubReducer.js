@@ -5,6 +5,7 @@ import {
   GET_REPOS,
   SET_LOADING,
   GET_PAGINATED_REPOS,
+  CLEAR_USER,
 } from "../constants";
 
 export default (state, action) => {
@@ -13,6 +14,7 @@ export default (state, action) => {
       return {
         ...state,
         users: [],
+        repos: [],
         loading: true,
       };
     case SEARCH_USERS:
@@ -33,6 +35,8 @@ export default (state, action) => {
         users: [],
         loading: false,
       };
+    case CLEAR_USER:
+      return { ...state, user: {}, loading: false };
     case GET_REPOS:
       return {
         ...state,
