@@ -91,6 +91,7 @@ img {
 .text-secondary {
   font-size: 0.8rem;
   color: var(--secondary-color);
+  line-height: 1.3;
 }
 
 .text-dark {

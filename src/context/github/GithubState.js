@@ -9,7 +9,7 @@ import {
   GET_REPOS,
   SET_LOADING,
   GET_PAGINATED_REPOS,
-  CLEAR_USER,
+  CLEAR_CURRENT,
 } from "../constants";
 
 let githubClientId;
@@ -51,9 +51,9 @@ const GithubState = (props) => {
     });
   };
 
-  const clearUser = () => {
+  const clearCurrent = () => {
     dispatch({
-      type: CLEAR_USER,
+      type: CLEAR_CURRENT,
     });
   };
 
@@ -104,7 +104,7 @@ const GithubState = (props) => {
         loading: state.loading,
         searchUsers,
         clearUsers,
-        clearUser,
+        clearCurrent,
         getUser,
         getUserRepos,
         getPaginatedUserRepos,

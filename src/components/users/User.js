@@ -13,7 +13,7 @@ const User = ({ match }) => {
     getUser,
     repos,
     getUserRepos,
-    clearUser,
+    clearCurrent,
   } = githubContext;
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const User = ({ match }) => {
 
   const onHandleBack = () => {
     history.push("/");
-    clearUser();
+    clearCurrent();
   };
 
   if (loading) return Spinner;
@@ -129,19 +129,25 @@ const User = ({ match }) => {
           <ul style={{ marginTop: "1rem" }}>
             <li className="badge-wrapper">
               Followers
-              <span class="badge" style={{ backgroundColor: "#FFC6AC" }}>
+              <span className="badge" style={{ backgroundColor: "#FFC6AC" }}>
                 {followers}
               </span>
             </li>
             <li className="badge-wrapper">
               Following
-              <span class="badge green" style={{ backgroundColor: "#BBDEF0" }}>
+              <span
+                className="badge green"
+                style={{ backgroundColor: "#BBDEF0" }}
+              >
                 {following}
               </span>
             </li>
             <li className="badge-wrapper">
               Public repos
-              <span class="badge yellow" style={{ backgroundColor: "#DEEFB7" }}>
+              <span
+                className="badge yellow"
+                style={{ backgroundColor: "#DEEFB7" }}
+              >
                 {public_repos}
               </span>
             </li>

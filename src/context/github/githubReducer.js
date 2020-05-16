@@ -5,7 +5,7 @@ import {
   GET_REPOS,
   SET_LOADING,
   GET_PAGINATED_REPOS,
-  CLEAR_USER,
+  CLEAR_CURRENT,
 } from "../constants";
 
 export default (state, action) => {
@@ -35,7 +35,7 @@ export default (state, action) => {
         users: [],
         loading: false,
       };
-    case CLEAR_USER:
+    case CLEAR_CURRENT:
       return { ...state, user: {}, loading: false };
     case GET_REPOS:
       return {
@@ -43,6 +43,7 @@ export default (state, action) => {
         repos: action.payload,
         loadind: false,
       };
+
     case GET_PAGINATED_REPOS:
       return {
         ...state,
