@@ -27,10 +27,10 @@ const RepoItem = ({
           src={repo}
           alt="repo"
           style={{
-            height: 20,
-            width: 20,
+            height: "1.2rem",
+            width: "1.2rem",
             verticalAlign: "middle",
-            marginRight: 8,
+            marginRight: "0.3rem",
           }}
         />
         <a
@@ -52,7 +52,7 @@ const RepoItem = ({
         </p>
       )}
       <p className="text-secondary" style={{ margin: "0.5rem 0px" }}>
-        <span>{language ? language : ""}</span>
+        <span>{language ? language : <em>Language is not defined</em>}</span>
       </p>
       <div className="text-secondary flex-column">
         <div>

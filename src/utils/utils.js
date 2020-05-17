@@ -10,8 +10,8 @@ export const languageColor = (lang) => {
       return "#2b7489";
     case "C#":
       return "#178600";
-    case "CSS0":
-      return "#563d7c";
+    case "Vue":
+      return "#2c3e50";
     case "TSQL":
       return "#CCCCCC";
     case "PHP":
@@ -40,10 +40,44 @@ export const languageColor = (lang) => {
       return "#555555";
     case "R":
       return "#198CE7";
+    case "Dart":
+      return "#00B4AB";
+    case "Shell":
+      return "#89e051";
+    case "Haskell":
+      return "#5e5086";
+    case "Rust":
+      return "#dea584";
+    case "Kotlin":
+      return "#F18E33";
+    case "Roff":
+      return "#ecdebe";
+    case "Dockerfile":
+      return "#384d54";
+    case "Makefile":
+      return "#427819";
+    case "Perl":
+      return "#0298c3";
+    case "Raku":
+      return "#0000fb";
+    case "SAS":
+      return "#B34936";
+    case "Erlang":
+      return "#B83998";
+    case "Elixir":
+      return "#6e4a7e";
+    case "Scala":
+      return "#c22d40";
+    case "XSLT":
+      return "#EB8CEB";
+    case "Jupyter Notebook":
+      return "#DA5B0B";
+    case "PLSQL":
+      return "#dad8d8";
     default:
       return "#EDEDED";
   }
 };
 
 export const truncateText = (string, number) =>
-  string.length > 75 ? `${string.substring(0, number)}...` : string;
+  string.length > number ? `${string.substring(0, number)}...` : string;
