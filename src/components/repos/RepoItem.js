@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { languageColor, truncateText } from "../../utils/utils";
 import moment from "moment";
+import repo from "../../assets/images/repo.png";
 
 const RepoItem = ({
   repo: {
@@ -22,7 +23,16 @@ const RepoItem = ({
       }}
     >
       <div style={{ fontWeight: 600 }}>
-        <i className="fab fa-buffer"></i>
+        <img
+          src={repo}
+          alt="repo"
+          style={{
+            height: 20,
+            width: 20,
+            verticalAlign: "middle",
+            marginRight: 8,
+          }}
+        />
         <a
           href={html_url}
           target="_blank"
@@ -44,7 +54,7 @@ const RepoItem = ({
       <p className="text-secondary" style={{ margin: "0.5rem 0px" }}>
         <span>{language ? language : ""}</span>
       </p>
-      <p className="text-secondary flex-column">
+      <div className="text-secondary flex-column">
         <div>
           <span style={{ marginRight: "1rem" }}>
             <i
@@ -62,7 +72,7 @@ const RepoItem = ({
           </span>
         </div>
         <div>Last update: {moment(updated_at).format("YYYY-MM-DD")}</div>
-      </p>
+      </div>
     </div>
   );
 };
