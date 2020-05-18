@@ -14,6 +14,7 @@ const User = ({ match }) => {
     repos,
     getUserRepos,
     clearCurrent,
+    clearSorted,
   } = githubContext;
 
   useEffect(() => {
@@ -41,16 +42,18 @@ const User = ({ match }) => {
   const onHandleBack = () => {
     history.push("/");
     clearCurrent();
+    clearSorted();
   };
 
   if (loading) return Spinner;
 
   return (
-    <>
+    <div className="container">
       <button onClick={onHandleBack} className="btn-ghb">
         <i className="fas fa-angle-double-left"></i>
         Back to search
       </button>
+
       <div className="card grid-2">
         <div className="all-center">
           <img
@@ -128,6 +131,12 @@ const User = ({ match }) => {
           </ul>
           <ul style={{ marginTop: "1rem" }}>
             <li className="badge-wrapper">
+              Public repos
+              <span className="badge" style={{ backgroundColor: "#DEEFB7" }}>
+                {public_repos}
+              </span>
+            </li>
+            <li className="badge-wrapper">
               Followers
               <span className="badge" style={{ backgroundColor: "#FFC6AC" }}>
                 {followers}
@@ -135,27 +144,16 @@ const User = ({ match }) => {
             </li>
             <li className="badge-wrapper">
               Following
-              <span
-                className="badge green"
-                style={{ backgroundColor: "#BBDEF0" }}
-              >
+              <span className="badge" style={{ backgroundColor: "#BBDEF0" }}>
                 {following}
-              </span>
-            </li>
-            <li className="badge-wrapper">
-              Public repos
-              <span
-                className="badge yellow"
-                style={{ backgroundColor: "#DEEFB7" }}
-              >
-                {public_repos}
               </span>
             </li>
           </ul>
         </div>
       </div>
+
       <Repos repos={repos} />
-    </>
+    </div>
   );
 };
 

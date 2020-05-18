@@ -9,6 +9,7 @@
   --light-color: #eff3f6;
   --danger-color: #dc3545;
   --success-color: #279f43;
+  --body-bgrd-color: #fafbfc
 }
 
 * {
@@ -21,8 +22,8 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fafbfc;
-  color: #333;
+  background-color: var(--body-bgrd-color);
+  color: var(--primary-color);
 }
 
 a {
@@ -343,6 +344,7 @@ ul .badge-wrapper {
   height: 26px;
   line-height: 26px;
   text-decoration: none;
+  background-color: var(--body-bgrd-color);
   text-align: center;
   border: 1px solid rgba(27, 31, 35, 0.2);
   border-radius: 0.3em;
@@ -532,24 +534,6 @@ nav.navbar li:hover {
   grid-gap: 1rem;
 }
 
-/* Animation (Add After) */
-.item-enter {
-  opacity: 0;
-}
-
-.item-enter-active {
-  opacity: 1;
-  transition: opacity 1000ms ease-in;
-}
-
-.item-exit {
-  opacity: 1;
-}
-
-.item-exit-active {
-  opacity: 0;
-  transition: opacity 1000ms ease-in;
-}
 
 @media (max-width: 1024px) {
   .usersGrid {

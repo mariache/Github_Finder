@@ -10,6 +10,7 @@ import {
   SET_LOADING,
   GET_PAGINATED_REPOS,
   CLEAR_CURRENT,
+  CLEAR_SORTED,
 } from "../constants";
 
 let githubClientId;
@@ -28,6 +29,7 @@ const GithubState = (props) => {
     user: {},
     users: [],
     repos: [],
+    sortedRepos: [],
     loading: false,
   };
 
@@ -54,6 +56,12 @@ const GithubState = (props) => {
   const clearCurrent = () => {
     dispatch({
       type: CLEAR_CURRENT,
+    });
+  };
+
+  const clearSorted = () => {
+    dispatch({
+      type: CLEAR_SORTED,
     });
   };
 
@@ -102,9 +110,11 @@ const GithubState = (props) => {
         users: state.users,
         repos: state.repos,
         loading: state.loading,
+        sortedRepos: state.sortedRepos,
         searchUsers,
         clearUsers,
         clearCurrent,
+        clearSorted,
         getUser,
         getUserRepos,
         getPaginatedUserRepos,

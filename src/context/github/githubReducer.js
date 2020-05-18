@@ -6,6 +6,7 @@ import {
   SET_LOADING,
   GET_PAGINATED_REPOS,
   CLEAR_CURRENT,
+  CLEAR_SORTED,
 } from "../constants";
 
 export default (state, action) => {
@@ -37,13 +38,17 @@ export default (state, action) => {
       };
     case CLEAR_CURRENT:
       return { ...state, user: {}, loading: false };
+    case CLEAR_SORTED:
+      return {
+        ...state,
+        sortedRepos: [],
+      };
     case GET_REPOS:
       return {
         ...state,
         repos: action.payload,
         loadind: false,
       };
-
     case GET_PAGINATED_REPOS:
       return {
         ...state,
