@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
 /* Global Styles */
 :root {
@@ -442,6 +443,7 @@ ul .badge-wrapper {
 /* Forms */
 input {
   margin: 1.2rem 0;
+  font-family: 'Fira Code', monospace;
 }
 
 .form-text {
@@ -513,6 +515,15 @@ table th {
 
 .navbar .welcome span {
   margin-right: 0.6rem;
+}
+
+nav.navbar li {
+  border-bottom: 3px solid transparent;
+}
+
+nav.navbar li:hover {
+  border-color: var(--light-color);
+  ;
 }
 
 .usersGrid {

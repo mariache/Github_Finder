@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-
+import ghb from "../../assets/images/ghb.png";
 import GithubContext from "../../context/github/githubContext";
 import AlertContext from "../../context/alert/alertContext";
 
@@ -25,25 +25,46 @@ const Search = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={onSubmit} className="form">
-        <input
-          type="text"
-          name="text"
-          placeholder="Search users..."
-          value={search}
-          onChange={onChange}
-        />
-        <input
-          type="submit"
-          value="Search"
-          className="btn btn-dark btn-block"
-        />
-      </form>
+    <div className="card-search">
+      {!users.length && (
+        <>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <div>
+              <h1>Github Finder</h1>
+              <p class="lead">Search for a user to see profile details.</p>
+            </div>
+            <img src={ghb} alt="" style={{ width: 100 }} />
+          </div>
+          <form onSubmit={onSubmit} className="form">
+            <input
+              type="text"
+              name="text"
+              placeholder="Search users..."
+              value={search}
+              onChange={onChange}
+              style={{ marginTop: ".5rem" }}
+            />
+            <input
+              type="submit"
+              value="Search"
+              className="btn btn-dark btn-block"
+            />
+          </form>
+        </>
+      )}
       {users.length > 0 && (
-        <button className="btn btn-light btn-block" onClick={clearUsers}>
-          Clear result
-        </button>
+        <div className="flex-column">
+          <img src={ghb} alt="" style={{ width: 100, margin: "0 auto 1rem" }} />
+          <button className="btn btn-ghb btn-block" onClick={clearUsers}>
+            Clear result
+          </button>
+        </div>
       )}
     </div>
   );

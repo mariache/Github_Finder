@@ -74,6 +74,40 @@ export const languageColor = (lang) => {
       return "#DA5B0B";
     case "PLSQL":
       return "#dad8d8";
+    case "ABAP":
+      return "#E8274B";
+    case "Groovy":
+      return "#e69f56";
+    case "CoffeeScript":
+      return "#244776";
+    case "ActionScript":
+      return "#882B0F";
+    case "Ada":
+      return "#02f88c";
+    case "Assembly":
+      return "#6E4C13";
+    case "Common Lisp":
+      return "#3fb68b";
+    case "Emacs Lisp":
+      return "#c065db";
+    case "Scheme":
+      return "#1e4aec";
+    case "Clojure":
+      return "#db5855";
+    case "Visual Basic":
+      return "#945db7";
+    case "Fortran":
+      return "#4d41b1";
+    case "VimL":
+      return "#199f4b";
+    case "Io":
+      return "#a9188d";
+    case "ASP":
+      return "#6a40fd";
+    case "GLSL":
+      return "#ccc";
+    case "ShaderLab":
+      return "#ccc";
     default:
       return "#EDEDED";
   }
