@@ -7,7 +7,10 @@ import {
   GET_PAGINATED_REPOS,
   CLEAR_CURRENT,
   CLEAR_SORTED,
+  GET_SORTED_REPOS,
 } from "../constants";
+
+import moment from "moment";
 
 export default (state, action) => {
   switch (action.type) {
@@ -48,6 +51,13 @@ export default (state, action) => {
         ...state,
         repos: action.payload,
         loadind: false,
+      };
+    case GET_SORTED_REPOS:
+      return {
+        ...state,
+        sortedRepos: state.repos.sort((a, b) =>
+          moment(b.updated_at).diff(moment(a.updated_at))
+        ),
       };
     case GET_PAGINATED_REPOS:
       return {

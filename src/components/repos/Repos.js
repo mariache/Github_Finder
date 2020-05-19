@@ -6,8 +6,7 @@ import moment from "moment";
 const Repos = ({ repos }) => {
   return (
     <>
-      <h2>Last added repos</h2>
-
+      <h2 className="title">Last updated repos</h2>
       <div className="card-repo-wrapper">
         {repos
           .sort((a, b) => {

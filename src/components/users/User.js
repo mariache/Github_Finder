@@ -48,7 +48,7 @@ const User = ({ match }) => {
   if (loading) return Spinner;
 
   return (
-    <div className="container">
+    <>
       <button onClick={onHandleBack} className="btn-ghb">
         <i className="fas fa-angle-double-left"></i>
         Back to search
@@ -153,7 +153,7 @@ const User = ({ match }) => {
       </div>
 
       <Repos repos={repos} />
-    </div>
+    </>
   );
 };
 

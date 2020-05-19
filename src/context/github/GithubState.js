@@ -9,6 +9,7 @@ import {
   GET_REPOS,
   SET_LOADING,
   GET_PAGINATED_REPOS,
+  GET_SORTED_REPOS,
   CLEAR_CURRENT,
   CLEAR_SORTED,
 } from "../constants";
@@ -79,7 +80,7 @@ const GithubState = (props) => {
 
   const getPaginatedUserRepos = async (username) => {
     setLoading();
-    const res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=6&sort=created:asc&client_id=
+    const res = await axios.get(`https://api.github.com/users/${username}/repos?page=1&per_page=6&sort=created:asc&client_id=
     ${githubClientId}&client_secret=
     ${githubClientSecret}`);
 
@@ -91,7 +92,7 @@ const GithubState = (props) => {
 
   const getUserRepos = async (username) => {
     setLoading();
-    const res = await axios.get(`https://api.github.com/users/${username}/repos?client_id=
+    const res = await axios.get(`https://api.github.com/users/${username}/repos?sort=created:asc&client_id=
     ${githubClientId}&client_secret=
     ${githubClientSecret}`);
 
@@ -100,6 +101,8 @@ const GithubState = (props) => {
       payload: res.data,
     });
   };
+
+  const getSortedRepos = (order) => dispatch({ type: GET_SORTED_REPOS });
 
   const setLoading = () => dispatch({ type: SET_LOADING });
 
@@ -117,6 +120,7 @@ const GithubState = (props) => {
         clearSorted,
         getUser,
         getUserRepos,
+        getSortedRepos,
         getPaginatedUserRepos,
       }}
     >
