@@ -78,6 +78,7 @@ const GithubState = (props) => {
     });
   };
 
+  // @TODO (not in use yet)
   const getPaginatedUserRepos = async (username) => {
     setLoading();
     const res = await axios.get(`https://api.github.com/users/${username}/repos?page=1&per_page=6&sort=created:asc&client_id=
@@ -102,6 +103,7 @@ const GithubState = (props) => {
     });
   };
 
+  // @TODO (not properly implemented yet)
   const getSortedRepos = (order) => dispatch({ type: GET_SORTED_REPOS });
 
   const setLoading = () => dispatch({ type: SET_LOADING });

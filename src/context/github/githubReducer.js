@@ -52,6 +52,7 @@ export default (state, action) => {
         repos: action.payload,
         loadind: false,
       };
+    // @TODO (not properly implemented yet)
     case GET_SORTED_REPOS:
       return {
         ...state,

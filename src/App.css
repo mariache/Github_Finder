@@ -538,6 +538,12 @@ nav.navbar li:hover {
   grid-gap: 1rem;
 }
 
+.card-text-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 
 @media (max-width: 1024px) {
   .usersGrid {
@@ -597,6 +603,14 @@ nav.navbar li:hover {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(6, 175px);
     grid-gap: 0.1rem;
+  }
+
+  .subTitle-text {
+    display: none;
+  }
+
+  .card-text-wrapper {
+    flex-direction: column;
   }
 }
 
