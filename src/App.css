@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
 
 /* Global Styles */
 :root {
@@ -9,7 +9,7 @@
   --light-color: #eff3f6;
   --danger-color: #dc3545;
   --success-color: #279f43;
-  --body-bgrd-color: #fafbfc
+  --body-bgrd-color: #fafbfc;
 }
 
 * {
@@ -26,6 +26,7 @@ body {
   color: var(--primary-color);
 }
 
+/* @TODO (not in use for navbar)*/
 a {
   color: #0366d6;
   text-decoration: none;
@@ -445,7 +446,7 @@ ul .badge-wrapper {
 /* Forms */
 input {
   margin: 1.2rem 0;
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
 }
 
 .title {
@@ -498,38 +499,35 @@ table th {
   margin-bottom: 1rem;
 }
 
-.navbar ul {
+.navbar__list {
   display: flex;
 }
 
-.navbar .fa-github {
-  margin-right: 0.6rem;
-}
-
-.navbar a {
+.navbar__item,
+.logo {
   color: #fff;
   padding: 0.45rem;
   margin: 0 0.25rem;
   font-weight: 600;
+  text-decoration: none;
+  word-break: break-all;
   white-space: nowrap;
+  border-bottom: 3px solid transparent;
 }
 
-.navbar a:hover {
+.logo__icon {
+  margin-right: 0.6rem;
+}
+
+.logo:hover {
   color: var(--light-color);
   text-decoration: none;
 }
 
-.navbar .welcome span {
-  margin-right: 0.6rem;
-}
-
-nav.navbar li {
-  border-bottom: 3px solid transparent;
-}
-
-nav.navbar li:hover {
+.navbar__item:hover {
+  color: var(--light-color);
+  text-decoration: none;
   border-color: var(--light-color);
-  ;
 }
 
 .usersGrid {
@@ -543,7 +541,6 @@ nav.navbar li:hover {
   align-items: center;
   justify-content: space-between;
 }
-
 
 @media (max-width: 1024px) {
   .usersGrid {
@@ -593,7 +590,7 @@ nav.navbar li:hover {
     text-align: center;
   }
 
-  .navbar ul {
+  .navbar__list {
     text-align: center;
     justify-content: center;
   }

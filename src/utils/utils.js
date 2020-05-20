@@ -10,10 +10,16 @@ export const languageColor = (lang) => {
       return "#2b7489";
     case "C#":
       return "#178600";
+    case "F#":
+      return "#b845fc";
     case "Vue":
       return "#2c3e50";
     case "TSQL":
       return "#CCCCCC";
+    case "Elm":
+      return "#60B5CC";
+    case "OCaml":
+      return "#3be133";
     case "PHP":
       return "#4F5D95";
     case "Go":

@@ -5,18 +5,22 @@ import { Link } from "react-router-dom";
 const Navbar = ({ icon, title }) => {
   return (
     <nav className="navbar bg-primary">
-      <Link to="/">
-        <h1>
-          <i className={icon} />
+      <Link className="logo" to="/">
+        <h1 className="logo__name">
+          <i className={`${icon} logo__icon`} />
           {title}
         </h1>
       </Link>
-      <ul>
+      <ul className="navbar__list">
         <li>
-          <Link to="/">Home</Link>
+          <Link className="navbar__item" to="/">
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link className="navbar__item" to="/about">
+            About
+          </Link>
         </li>
       </ul>
     </nav>
