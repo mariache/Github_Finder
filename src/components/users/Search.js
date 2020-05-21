@@ -25,20 +25,26 @@ const Search = () => {
   };
 
   return (
-    <div className="card-search">
+    <>
       {!users.length && (
         <div className="card p-3">
-          <div className="card-text-wrapper">
+          <div className="card__content">
             <div>
-              <h1>Github Finder</h1>
-              <p class="subTitle-text">
+              <h1 className="title">Github Finder</h1>
+              <p class="card__description">
                 Search for a user to see profile details.
               </p>
             </div>
-            <img src={ghb} alt="github logo" style={{ width: 100 }} />
+            <img
+              src={ghb}
+              alt="github logo"
+              style={{ width: 100 }}
+              className="logo"
+            />
           </div>
           <form onSubmit={onSubmit} className="form">
             <input
+              className="form__input"
               type="text"
               name="text"
               placeholder="Search users..."
@@ -47,18 +53,19 @@ const Search = () => {
               style={{ marginTop: "0.5rem" }}
             />
             <input
+              className="form__button_dark btn"
               type="submit"
               value="Search"
-              className="btn btn-dark btn-block"
             />
           </form>
         </div>
       )}
       {users.length > 0 && (
-        <div className="flex-column">
+        <div className="search-result">
           <img
             src={ghb}
             alt="github logo"
+            className="logo"
             style={{ width: 100, margin: "0 auto 1rem" }}
           />
           <button className="btn btn-ghb btn-block" onClick={clearUsers}>
@@ -66,7 +73,7 @@ const Search = () => {
           </button>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

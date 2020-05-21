@@ -444,47 +444,36 @@ ul .badge-wrapper {
 }
 
 /* Forms */
-input {
-  margin: 1.2rem 0;
-  font-family: "Fira Code", monospace;
-}
 
-.title {
-  margin-top: 2rem;
-}
-
-.form-text {
-  display: block;
-  margin-top: 0.3rem;
-  color: #888;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="date"],
+.form__input,
 select,
 textarea {
   display: block;
   width: 100%;
   padding: 0.4rem;
   font-size: 1.2rem;
+  margin: 1.2rem 0;
+  font-family: "Fira Code", monospace;
   border: 1px solid #ccc;
 }
 
-input[type="submit"],
+.form__button,
 button {
   font: inherit;
 }
 
-table th,
-table td {
-  padding: 1rem;
-  text-align: left;
+.form__button_dark {
+  background: var(--dark-color);
+  color: #fff;
+  display: block;
+  width: 100%;
+  font: inherit;
 }
 
-table th {
-  background: var(--light-color);
+.search-result {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 /* Navbar */
@@ -536,7 +525,7 @@ table th {
   grid-gap: 1rem;
 }
 
-.card-text-wrapper {
+.card__content {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -602,11 +591,11 @@ table th {
     grid-gap: 0.1rem;
   }
 
-  .subTitle-text {
+  .card__description {
     display: none;
   }
 
-  .card-text-wrapper {
+  .card__content {
     flex-direction: column;
   }
 }
