@@ -3,6 +3,7 @@ import Spinner from "../layout/Spinner/Spinner";
 import { useHistory } from "react-router-dom";
 import Repos from "../repos/Repos";
 import GithubContext from "../../context/github/githubContext";
+import moment from "moment";
 
 const User = ({ match }) => {
   const history = useHistory();
@@ -37,6 +38,7 @@ const User = ({ match }) => {
     following,
     public_repos,
     hireable,
+    created_at,
   } = user;
 
   const onHandleBack = () => {
@@ -76,6 +78,10 @@ const User = ({ match }) => {
               <i className="fas fa-map-marker-alt"></i>Location: {location}
             </p>
           )}
+          <p>
+            <i className="far fa-calendar-alt"></i>Member since:{" "}
+            {moment(created_at).format("YYYY-MM-DD")}
+          </p>
         </div>
         <div className="flex-column">
           {bio && (
