@@ -1,6 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { languageColor, truncateText } from "../../utils/utils";
+import {
+  languageColor,
+  truncateText,
+  capitalizeFirstChar,
+} from "../../utils/utils";
 import moment from "moment";
 import repo from "../../assets/images/repo.png";
 
@@ -39,11 +43,7 @@ const RepoItem = ({
           rel="noopener noreferrer"
           style={{ wordBreak: "break-word" }}
         >
-          {name
-            .toLowerCase()
-            .split("-")
-            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(" ")}
+          {capitalizeFirstChar(name)}
         </a>
       </div>
       {description && (

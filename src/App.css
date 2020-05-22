@@ -16,7 +16,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 body {
@@ -288,17 +288,12 @@ i.far.fa-user {
   margin-right: 0.2rem;
 }
 
-ul .badge-wrapper {
+.badge-wrapper li {
+  font-size: 0.8rem;
   display: inline;
   margin-right: 1rem;
-}
-
-.badge-wrapper {
-  display: block;
-  font-size: 0.8rem;
   position: relative;
   padding: 0.2rem;
-  height: 26px;
   line-height: 26px;
   text-decoration: none;
   background-color: var(--body-bgrd-color);
@@ -506,6 +501,12 @@ button {
     display: none;
   }
 
+  .btn-ghb-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .grid-2,
   .grid-3,
   .grid-4 {
@@ -543,6 +544,11 @@ button {
   .card__content {
     flex-direction: column;
   }
+
+  .badge-wrapper {
+    text-align: center;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 425px) {
@@ -561,7 +567,7 @@ button {
     line-height: 1;
   }
 
-  .badge-wrapper {
+  .badge-wrapper li {
     font-size: 0.6rem;
   }
 }

@@ -98,15 +98,18 @@ const User = ({ match }) => {
               <p>{bio}</p>
             </>
           )}
-          <a
-            href={html_url}
-            className="btn-ghb my-1"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ width: "fit-content" }}
-          >
-            Visit Github profile
-          </a>
+          <div className="btn-ghb-wrapper">
+            <a
+              href={html_url}
+              className="btn-ghb my-1"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ width: "fit-content" }}
+            >
+              <i className="fab fa-github"></i>
+              Visit Github profile
+            </a>
+          </div>
           <ul>
             <li>
               {login && (
@@ -143,20 +146,20 @@ const User = ({ match }) => {
               )}
             </li>
           </ul>
-          <ul style={{ marginTop: "1rem" }}>
-            <li className="badge-wrapper">
+          <ul className="badge-wrapper" style={{ marginTop: "1rem" }}>
+            <li>
               Public repos
               <span className="badge" style={{ backgroundColor: "#DEEFB7" }}>
                 {public_repos}
               </span>
             </li>
-            <li className="badge-wrapper">
+            <li>
               Followers
               <span className="badge" style={{ backgroundColor: "#FFC6AC" }}>
                 {followers}
               </span>
             </li>
-            <li className="badge-wrapper">
+            <li>
               Following
               <span className="badge" style={{ backgroundColor: "#BBDEF0" }}>
                 {following}
