@@ -1,12 +1,12 @@
 import React from "react";
-import Search from "../users/Search";
-import Users from "../users/Users";
+import SearchCard from "../users/SearchCard";
+import UsersGrid from "../users/UsersGrid";
 
 const Home = () => {
   return (
     <>
-      <Search />
-      <Users />
+      <SearchCard />
+      <UsersGrid />
     </>
   );
 };

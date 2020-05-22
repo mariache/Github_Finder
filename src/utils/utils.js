@@ -14,8 +14,6 @@ export const languageColor = (lang) => {
       return "#b845fc";
     case "Vue":
       return "#2c3e50";
-    case "TSQL":
-      return "#CCCCCC";
     case "Elm":
       return "#60B5CC";
     case "OCaml":
@@ -50,6 +48,8 @@ export const languageColor = (lang) => {
       return "#00B4AB";
     case "Shell":
       return "#89e051";
+    case "PowerShell":
+      return "#012456";
     case "Haskell":
       return "#5e5086";
     case "Rust":
@@ -62,6 +62,8 @@ export const languageColor = (lang) => {
       return "#384d54";
     case "Makefile":
       return "#427819";
+    case "Batchfile":
+      return "#C1F12E";
     case "Perl":
       return "#0298c3";
     case "Raku":
@@ -106,14 +108,27 @@ export const languageColor = (lang) => {
       return "#4d41b1";
     case "VimL":
       return "#199f4b";
+    case "Vim script":
+      return "#199f4b";
     case "Io":
       return "#a9188d";
     case "ASP":
       return "#6a40fd";
+    case "POV-Ray SDL":
     case "GLSL":
-      return "#ccc";
+    case "Mathematica":
     case "ShaderLab":
-      return "#ccc";
+    case "TSQL":
+    case "GCC Machine Description":
+      return "#CCCCCC";
+    case "PureScript":
+      return "#1d222d";
+    case "Dhall":
+      return "#dfafff";
+    case "Nix":
+      return "#7e7eff";
+    case "TeX":
+      return "#3d6117";
     default:
       return "#EDEDED";
   }

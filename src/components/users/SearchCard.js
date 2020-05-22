@@ -1,28 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import ghb from "../../assets/images/ghb.png";
 import GithubContext from "../../context/github/githubContext";
-import AlertContext from "../../context/alert/alertContext";
+import SearchForm from "./SearchForm";
 
-const Search = () => {
+const SearchCard = () => {
   const githubContext = useContext(GithubContext);
-  const alertContext = useContext(AlertContext);
   const { clearUsers, users } = githubContext;
-
-  const [search, setSearch] = useState("");
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    if (search === "") {
-      alertContext.setAlert("Please enter something", "light");
-    } else {
-      githubContext.searchUsers(search);
-      setSearch("");
-    }
-  };
-
-  const onChange = (e) => {
-    setSearch(e.target.value);
-  };
 
   return (
     <>
@@ -42,22 +25,7 @@ const Search = () => {
               className="logo"
             />
           </div>
-          <form onSubmit={onSubmit} className="form">
-            <input
-              className="form__input"
-              type="text"
-              name="text"
-              placeholder="Search users..."
-              value={search}
-              onChange={onChange}
-              style={{ marginTop: "0.5rem" }}
-            />
-            <input
-              className="form__button_dark btn"
-              type="submit"
-              value="Search"
-            />
-          </form>
+          <SearchForm />
         </div>
       )}
       {users.length > 0 && (
@@ -77,4 +45,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchCard;

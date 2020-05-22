@@ -4,7 +4,7 @@ import Spinner from "../layout/Spinner/Spinner";
 
 import GithubContext from "../../context/github/githubContext";
 
-const Users = () => {
+const UsersGrid = () => {
   const githubContext = useContext(GithubContext);
 
   const { loading, users } = githubContext;
@@ -22,4 +22,4 @@ const Users = () => {
   }
 };
 
-export default Users;
+export default UsersGrid;
