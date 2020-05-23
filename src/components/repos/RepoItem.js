@@ -1,10 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  languageColor,
-  truncateText,
-  capitalizeFirstChar,
-} from "../../utils/utils";
+import { truncateText, capitalizeFirstChar } from "../../utils/utils";
+import { languageColors } from "../../utils";
 import moment from "moment";
 import repo from "../../assets/images/repo.png";
 
@@ -23,7 +20,7 @@ const RepoItem = ({
     <div
       className="repo flex-column"
       style={{
-        borderLeft: `25px solid ${languageColor(language)} `,
+        borderLeft: `25px solid ${languageColors(language)} `,
       }}
     >
       <div style={{ fontWeight: 600 }}>

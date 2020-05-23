@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import Repos from "../repos/Repos";
 import GithubContext from "../../context/github/githubContext";
 import moment from "moment";
-import { favouriteLanguage, languageColor } from "../../utils/utils";
+import { languageColors, favouriteLanguage } from "../../utils";
 
 const User = ({ match }) => {
   const history = useHistory();
@@ -77,7 +77,7 @@ const User = ({ match }) => {
           <p>
             <i
               className="fas fa-star"
-              style={{ color: languageColor(favouriteLanguage(repos)) }}
+              style={{ color: languageColors(favouriteLanguage(repos)) }}
             ></i>
             Favorite language: {favouriteLanguage(repos)}
           </p>

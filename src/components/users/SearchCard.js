@@ -14,7 +14,7 @@ const SearchCard = () => {
           <div className="card__content">
             <div>
               <h1 className="title">Github Finder</h1>
-              <p class="card__description">
+              <p className="card__description">
                 Search for a user to see profile details.
               </p>
             </div>

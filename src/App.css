@@ -556,6 +556,16 @@ button {
     grid-template-columns: 1fr;
   }
 
+  body {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  i.far.fa-user {
+    width: 0.85rem;
+    margin-left: 0.15rem;
+  }
+
   .card-repo-wrapper {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
