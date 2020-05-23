@@ -90,6 +90,8 @@ export const languageColor = (lang) => {
       return "#244776";
     case "ActionScript":
       return "#882B0F";
+    case "EmberScript": 
+      return '#FFF4F3';
     case "Ada":
       return "#02f88c";
     case "Assembly":
