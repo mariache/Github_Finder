@@ -19,6 +19,10 @@
   word-break: break-word;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -29,7 +33,6 @@ body {
 
 /* @TODO (not in use for navbar)*/
 a {
-  color: #0366d6;
   text-decoration: none;
   word-break: break-all;
 }
@@ -49,9 +52,17 @@ img {
 /* Utilities */
 .container {
   max-width: 1280px;
-  margin: 0 auto 2rem;
+  margin: 1rem auto 2rem;
   overflow: hidden;
   padding: 0 2rem;
+}
+
+.wrapper-main {
+  height: 90vh;
+  background: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  opacity: 0.9;
 }
 
 .flex-container {
@@ -436,7 +447,7 @@ button {
   z-index: 1;
   width: 100%;
   opacity: 0.9;
-  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--light-color)
 }
 
 .navbar__list {
@@ -559,6 +570,22 @@ button {
   body {
     font-size: 0.8rem;
     line-height: 1.5;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  a {
+    width: 100%;
+    text-align: center;
+
+  }
+
+  .form__input,
+  select,
+  textarea {
+    font-size: 0.7rem;
   }
 
   i.far.fa-user {

@@ -51,7 +51,7 @@ const User = ({ match }) => {
   if (loading) return Spinner;
 
   return (
-    <>
+    <div className="container">
       <button onClick={onHandleBack} className="btn-ghb">
         <i className="fas fa-angle-double-left"></i>
         Back to search
@@ -104,7 +104,6 @@ const User = ({ match }) => {
               className="btn-ghb my-1"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ width: "fit-content" }}
             >
               <i className="fab fa-github"></i>
               Visit Github profile
@@ -168,9 +167,8 @@ const User = ({ match }) => {
           </ul>
         </div>
       </div>
-
       <Repos repos={repos} />
-    </>
+    </div>
   );
 };
 
