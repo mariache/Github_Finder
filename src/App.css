@@ -574,6 +574,8 @@ button {
 
   h1 {
     font-size: 1.4rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
   }
 
   a {
