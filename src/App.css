@@ -52,9 +52,9 @@ img {
 /* Utilities */
 .container {
   max-width: 1280px;
-  margin: 1rem auto 2rem;
+  margin: 1rem auto 0;
   overflow: hidden;
-  padding: 0 2rem;
+  padding: 0 2rem 1rem;
 }
 
 .wrapper-main {
@@ -62,6 +62,7 @@ img {
   background: var(--primary-color);
   display: flex;
   justify-content: center;
+  align-items: center;
   opacity: 0.9;
 }
 
@@ -447,7 +448,7 @@ button {
   z-index: 1;
   width: 100%;
   opacity: 0.9;
-  border-bottom: 1px solid var(--light-color)
+  border-bottom: 1px solid var(--light-color);
 }
 
 .navbar__list {
@@ -581,7 +582,10 @@ button {
   a {
     width: 100%;
     text-align: center;
+  }
 
+  .wrapper-main {
+    align-items: start;
   }
 
   .form__input,
