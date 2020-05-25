@@ -20,7 +20,7 @@ const RepoItem = ({
     <div
       className="repo flex-column"
       style={{
-        borderLeft: `25px solid ${languageColors(language)} `,
+        borderLeft: `10px solid ${languageColors(language)} `,
       }}
     >
       <div style={{ fontWeight: 600 }}>
