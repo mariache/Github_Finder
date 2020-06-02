@@ -35,10 +35,13 @@ body {
 a {
   text-decoration: none;
   word-break: break-all;
+  padding: 5px;
+  color: #0366d6;
 }
 
 a:hover {
   text-decoration: underline;
+  transition: all 0.2s ease-in-out 0s;
 }
 
 ul {
@@ -122,19 +125,23 @@ img {
 
 .card-repo-wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 200px);
-  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+  gap: 1rem;
 }
 
 .repo {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 128px;
+  height: 100%;
+  color: rgb(88, 96, 105);
+  background-color: rgb(255, 255, 255);
   padding: 0.5rem 1rem;
-  margin: 0.7rem 0;
-  width: 100%;
-  height: auto;
+  border-radius: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 1.6px 3.6px 0px,
     rgba(0, 0, 0, 0.15) 0px 0.3px 0.9px 0px;
-  background-color: #fff;
 }
 
 .repo:hover {
@@ -498,13 +505,6 @@ button {
   .usersGrid {
     grid-template-columns: repeat(3, 1fr);
   }
-
-  .card-repo-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 200px);
-    grid-gap: 1rem;
-  }
 }
 
 /* Mobile Styles */
@@ -542,13 +542,6 @@ button {
     justify-content: center;
   }
 
-  .card-repo-wrapper {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(6, 175px);
-    grid-gap: 0.1rem;
-  }
-
   .card__description {
     display: none;
   }
@@ -566,6 +559,10 @@ button {
 @media (max-width: 425px) {
   .usersGrid {
     grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 1rem 0.5rem;
   }
 
   body {
@@ -597,12 +594,6 @@ button {
   i.far.fa-user {
     width: 0.85rem;
     margin-left: 0.15rem;
-  }
-
-  .card-repo-wrapper {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 0.1rem;
   }
 
   .repo {
