@@ -123,7 +123,7 @@ img {
   background-color: #fff;
 }
 
-.card-repo-wrapper {
+.card-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
   gap: 1rem;
@@ -240,22 +240,9 @@ i.far.fa-user {
   margin-left: 0.6rem;
 }
 
-/* Grid */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1rem;
-}
-
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
 }
 
@@ -529,9 +516,7 @@ button {
     justify-content: center;
   }
 
-  .grid-2,
-  .grid-3,
-  .grid-4 {
+  .grid-2 {
     grid-template-columns: 1fr;
   }
 

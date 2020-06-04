@@ -7,7 +7,7 @@ const Repos = ({ repos }) => {
   return (
     <>
       <h2 className="title">Last updated repos</h2>
-      <div className="card-repo-wrapper">
+      <div className="card-wrapper">
         {repos.length > 0 ? (
           repos
             .sort((a, b) => {

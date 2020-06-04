@@ -14,7 +14,7 @@ const UsersGrid = () => {
   } else {
     return (
       <div className="container">
-        <div className="usersGrid">
+        <div className="card-wrapper">
           {users.map((user) => (
             <UserItem key={user.id} user={user} />
           ))}
