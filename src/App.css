@@ -331,10 +331,10 @@ i.far.fa-user {
 
 .alert {
   padding: 0.7rem;
-  margin: 1rem 0;
+
   opacity: 0.9;
   background: var(--light-color);
-  color: #333;
+  color: var(--danger-color);
 }
 
 .btn-primary,
@@ -350,7 +350,7 @@ i.far.fa-user {
 .badge-light,
 .alert-light {
   background: var(--light-color);
-  color: #24292e;
+  color: var(--danger-color);
   background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
 }
 
@@ -486,22 +486,10 @@ button {
   border-color: var(--light-color);
 }
 
-.usersGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1rem;
-}
-
 .card__content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-@media (max-width: 1024px) {
-  .usersGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 /* Mobile Styles */
@@ -518,10 +506,6 @@ button {
 
   .grid-2 {
     grid-template-columns: 1fr;
-  }
-
-  .usersGrid {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   /* Text Styles */
@@ -552,10 +536,6 @@ button {
 }
 
 @media (max-width: 425px) {
-  .usersGrid {
-    grid-template-columns: 1fr;
-  }
-
   .container {
     padding: 0 1rem 0.5rem;
   }
