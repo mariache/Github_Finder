@@ -5,7 +5,6 @@ import Repos from "../repos/Repos";
 import GithubContext from "../../context/github/githubContext";
 import moment from "moment";
 import { languageColors, favouriteLanguage } from "../../utils";
-import CountUp from "react-countup";
 
 const User = ({ match }) => {
   const history = useHistory();
@@ -150,24 +149,19 @@ const User = ({ match }) => {
             <li>
               Public repos
               <span className="badge" style={{ backgroundColor: "#DEEFB7" }}>
-                <CountUp
-                  start={0}
-                  end={public_repos}
-                  duration={2}
-                  separator=","
-                />
+                {public_repos}
               </span>
             </li>
             <li>
               Followers
               <span className="badge" style={{ backgroundColor: "#FFC6AC" }}>
-                <CountUp start={0} end={followers} duration={2} separator="," />
+                {followers}
               </span>
             </li>
             <li>
               Following
               <span className="badge" style={{ backgroundColor: "#BBDEF0" }}>
-                <CountUp start={0} end={following} duration={2} separator="," />
+                {following}
               </span>
             </li>
           </ul>
