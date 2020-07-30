@@ -150,6 +150,18 @@ img {
   transform: scale(1.025);
 }
 
+.error-indicator {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--red);
+}
+
+.error-indicator .title {
+  font-size: 22px;
+}
+
 .footer {
   text-align: center;
   font-weight: 500;

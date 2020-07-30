@@ -11,23 +11,26 @@ import GithubState from "./context/github/GithubState";
 import AlertState from "./context/alert/AlertState";
 
 import "./App.css";
+import { ErrorBoundry } from "./components/layout/ErrorBoundry";
 
 const App = () => {
   return (
     <GithubState>
       <AlertState>
-        <Router>
-          <div className="App">
-            <Navbar />
-            <Alert />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/about" component={About} />
-              <Route exact path="/user/:login" component={User} />
-              <Route component={NotFound} />
-            </Switch>
-          </div>
-        </Router>
+        <ErrorBoundry>
+          <Router>
+            <div className="App">
+              <Navbar />
+              <Alert />
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/user/:login" component={User} />
+                <Route component={NotFound} />
+              </Switch>
+            </div>
+          </Router>
+        </ErrorBoundry>
       </AlertState>
     </GithubState>
   );
