@@ -79,9 +79,9 @@ const GithubState = (props) => {
   };
 
   // @TODO (not in use yet)
-  const getPaginatedUserRepos = async (username) => {
+  const getPaginatedUserRepos = async (username, nPerPage, nPage) => {
     setLoading();
-    const res = await axios.get(`https://api.github.com/users/${username}/repos?page=1&per_page=6&sort=created:asc&client_id=
+    const res = await axios.get(`https://api.github.com/users/${username}/repos?page=${nPage}&per_page=${nPerPage}&sort=created:asc&client_id=
     ${githubClientId}&client_secret=
     ${githubClientSecret}`);
 
