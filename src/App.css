@@ -155,7 +155,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: var(--red);
+  color: var(--danger-color);
 }
 
 .error-indicator .title {
