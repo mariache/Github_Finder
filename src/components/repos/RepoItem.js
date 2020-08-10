@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { truncateText, capitalizeFirstChar } from "../../utils/utils";
-import { languageColors } from "../../utils";
+import { truncateText, capitalizeFirstChar, languageColors } from "../../utils";
 import moment from "moment";
 import repo from "../../assets/images/repo.png";
 
