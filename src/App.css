@@ -19,7 +19,9 @@
   word-break: break-word;
 }
 
-html {
+html,
+body,
+#root {
   height: 100%;
 }
 
