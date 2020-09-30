@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.20.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.0",
     "moment-timezone": "^0.5.31",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -35,8 +35,8 @@
   },
   "devDependencies": {
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.3",
-    "jest": "^24.9.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "jest": "^26.4.2",
     "react-test-renderer": "^16.13.1"
   }
 }
