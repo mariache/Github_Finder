@@ -5,7 +5,7 @@ const capitalizeFirstChar = (name) =>
   name
     .toLowerCase()
     .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .map((word) => word.charAt(0).toUpperCase() + word.toLowerCase().slice(1))
     .join(" ");
 
 export { truncateText, capitalizeFirstChar };
