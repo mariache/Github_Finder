@@ -125,6 +125,10 @@ const languageColors = (lang) => {
     case "CMake":
     case "GCC Machine Description":
     case "DIGITAL Command Language":
+    case "JSON":
+    case "JSON with Comments":
+    case "TSX":
+    case "Ignore List":
       return "#CCCCCC";
     case "PureScript":
       return "#1d222d";
@@ -430,6 +434,14 @@ const languageColors = (lang) => {
       return "#94B0C7";
     case "PostScript":
       return "#da291c";
+    case "Starlark":
+      return "#76d275";
+    case "YAML":
+      return "#cb171e";
+    case "SVG":
+      return "#ff9900";
+    case "Markdown":
+      return "#083fa1";
     default:
       return "#EDEDED";
   }
