@@ -1,4 +1,4 @@
-import { capitalizeFirstChar, truncateText } from "./../utils";
+import { capitalizeFirstChar, truncateText, titleCase } from "./../utils";
 
 describe("function capitalizeFirstChar", () => {
   it("renders name with first capital letter", () => {
@@ -16,6 +16,27 @@ describe("function capitalizeFirstChar", () => {
       nameToReceive = "Name";
     name = capitalizeFirstChar(nameToCapitalize);
     anotherName = capitalizeFirstChar(anotherNameToCapitalize);
+    expect(name).toBe(nameToReceive);
+    expect(anotherName).toBe(nameToReceive);
+  });
+});
+
+describe("function titleCase", () => {
+  it("renders name with first capital letter", () => {
+    let name,
+      nameToCapitalize = "test name",
+      nameToReceive = "Test Name";
+    name = titleCase(nameToCapitalize);
+    expect(name).toBe(nameToReceive);
+  });
+  it("makes all letters lowerCase except first", () => {
+    let name,
+      anotherName,
+      nameToCapitalize = "test NAME",
+      anotherNameToCapitalize = "tesT nAmE",
+      nameToReceive = "Test Name";
+    name = titleCase(nameToCapitalize);
+    anotherName = titleCase(anotherNameToCapitalize);
     expect(name).toBe(nameToReceive);
     expect(anotherName).toBe(nameToReceive);
   });
