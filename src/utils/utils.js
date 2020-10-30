@@ -8,4 +8,10 @@ const capitalizeFirstChar = (name) =>
     .map((word) => word.charAt(0).toUpperCase() + word.toLowerCase().slice(1))
     .join(" ");
 
-export { truncateText, capitalizeFirstChar };
+const titleCase = (title) =>
+  title
+    .split(" ")
+    .map((word) => word[0].toUpperCase() + word.substring(1).toLowerCase())
+    .join(" ");
+
+export { truncateText, capitalizeFirstChar, titleCase };
