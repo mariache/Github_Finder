@@ -10,7 +10,7 @@ const favouriteLanguage = (repos) => {
   let maxElement = languages[0];
 
   for (let index = 0; index < languages.length; ++index) {
-    if (modeMap[languages[index]] == null) {
+    if (modeMap[languages[index]] === null) {
       modeMap[languages[index]] = 1;
     } else {
       modeMap[languages[index]] += 1;

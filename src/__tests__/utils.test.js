@@ -1,4 +1,11 @@
-import { capitalizeFirstChar, truncateText, titleCase } from "./../utils";
+import {
+  capitalizeFirstChar,
+  truncateText,
+  titleCase,
+  favouriteLanguage,
+} from "./../utils";
+
+import testRepos from "../testData/testRepos";
 
 describe("function capitalizeFirstChar", () => {
   it("renders name with first capital letter", () => {
@@ -50,5 +57,14 @@ describe("function truncateText", () => {
     text = truncateText(textToTruncate, 10);
     expect(text).toHaveLength(13);
     expect(text).toBe(textToReceive);
+  });
+});
+
+describe("function favouriteLanguage", () => {
+  it("returns favorite language", () => {
+    let lang,
+      langToReceive = "JavaScript";
+    lang = favouriteLanguage(testRepos);
+    expect(lang).toBe(langToReceive);
   });
 });
