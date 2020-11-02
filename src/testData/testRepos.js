@@ -1,4 +1,4 @@
-const repos = [
+const testRepos = [
   {
     contributors_url:
       "https://api.github.com/repos/mariache/Github_Finder/contributors",
@@ -257,4 +257,4 @@ const repos = [
   },
 ];
 
-export default repos;
+export default testRepos;

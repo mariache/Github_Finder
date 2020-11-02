@@ -1,3 +1,3 @@
-import repos from "./repos";
+import testRepos from "./testRepos";
 
-export { repos };
+export { testRepos };
