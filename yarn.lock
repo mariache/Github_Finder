@@ -2880,10 +2880,10 @@ axe-core@^4.0.2:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.1.1.tgz#70a7855888e287f7add66002211a423937063eaf"
   integrity sha512-5Kgy8Cz6LPC9DJcNb3yjAXTu3XihQgEdnIg50c//zOC/MyLP0Clg+Y8Sh9ZjjnvBrDZU4DgXS9C3T9r4/scGZQ==
 
-axios@^0.21.0:
-  version "0.21.0"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.0.tgz#26df088803a2350dff2c27f96fef99fe49442aca"
-  integrity sha512-fmkJBknJKoZwem3/IKSSLpkdNXZeBu5Q7GA/aRsr2btgrptmSCxi2oFjZHqGdK9DoTil9PIHlPIZw2EcRJXRvw==
+axios@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
   dependencies:
     follow-redirects "^1.10.0"
 
@@ -7392,7 +7392,7 @@ jest@26.6.0:
     import-local "^3.0.2"
     jest-cli "^26.6.0"
 
-jest@^26.6.1:
+jest@^26.6.3:
   version "26.6.3"
   resolved "https://registry.yarnpkg.com/jest/-/jest-26.6.3.tgz#40e8fdbe48f00dfa1f0ce8121ca74b88ac9148ef"
   integrity sha512-lGS5PXGAzR4RF7V5+XObhqz2KZIDUA1yD0DG6pBVmy10eh0ZIXQImRuzocsI/N2XZ1GrLFwTS27In2i2jlpq1Q==
@@ -8131,10 +8131,10 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-moment-timezone@^0.5.31:
-  version "0.5.31"
-  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.31.tgz#9c40d8c5026f0c7ab46eda3d63e49c155148de05"
-  integrity sha512-+GgHNg8xRhMXfEbv81iDtrVeTcWt0kWmTEY1XQK14dICTXnWJnT0dxdlPspwqF3keKMVPXwayEsk1DI0AA/jdA==
+moment-timezone@^0.5.32:
+  version "0.5.32"
+  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.32.tgz#db7677cc3cc680fd30303ebd90b0da1ca0dfecc2"
+  integrity sha512-Z8QNyuQHQAmWucp8Knmgei8YNo28aLjJq6Ma+jy1ZSpSk5nyfRT8xgUbSQvD2+2UajISfenndwvFuH3NGS+nvA==
   dependencies:
     moment ">= 2.9.0"
 
@@ -10051,7 +10051,7 @@ react-app-polyfill@^2.0.0:
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.4.1"
 
-react-dev-utils@^11.0.0:
+react-dev-utils@^11.0.1:
   version "11.0.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-11.0.1.tgz#30106c2055acfd6b047d2dc478a85c356e66fe45"
   integrity sha512-rlgpCupaW6qQqvu0hvv2FDv40QG427fjghV56XyPcP5aKtOAPzNAhQ7bHqk1YdS2vpW1W7aSV3JobedxuPlBAA==
@@ -10149,10 +10149,10 @@ react-router@5.2.0:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react-scripts@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-4.0.0.tgz#36f3d84ffff708ac0618fd61e71eaaea11c26417"
-  integrity sha512-icJ/ctwV5XwITUOupBP9TUVGdWOqqZ0H08tbJ1kVC5VpNWYzEZ3e/x8axhV15ZXRsixLo27snwQE7B6Zd9J2Tg==
+react-scripts@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-4.0.1.tgz#34974c0f4cfdf1655906c95df6a04d80db8b88f0"
+  integrity sha512-NnniMSC/wjwhcJAyPJCWtxx6CWONqgvGgV9+QXj1bwoW/JI++YF1eEf3Upf/mQ9KmP57IBdjzWs1XvnPq7qMTQ==
   dependencies:
     "@babel/core" "7.12.3"
     "@pmmmwh/react-refresh-webpack-plugin" "0.4.2"
@@ -10196,8 +10196,9 @@ react-scripts@4.0.0:
     postcss-normalize "8.0.1"
     postcss-preset-env "6.7.0"
     postcss-safe-parser "5.0.2"
+    prompts "2.4.0"
     react-app-polyfill "^2.0.0"
-    react-dev-utils "^11.0.0"
+    react-dev-utils "^11.0.1"
     react-refresh "^0.8.3"
     resolve "1.18.1"
     resolve-url-loader "^3.1.2"
