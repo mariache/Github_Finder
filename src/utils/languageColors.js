@@ -128,6 +128,7 @@ const languageColors = (lang) => {
     case "JSON":
     case "JSON with Comments":
     case "TSX":
+    case "Text":
     case "Ignore List":
       return "#CCCCCC";
     case "PureScript":
@@ -317,11 +318,13 @@ const languageColors = (lang) => {
     case "ooc":
       return "#b0b77e";
     case "Handlebars":
-      return "#01a9d6";
+      return "#f7931e";
     case "J":
       return "#9EEDFF";
     case "Mask":
       return "#f97732";
+    case "SCSS":
+      return "#c6538c";
     case "Nemerle":
       return "#3d3c6e";
     case "KRL":
