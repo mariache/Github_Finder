@@ -128,7 +128,9 @@ const languageColors = (lang) => {
     case "JSON":
     case "JSON with Comments":
     case "TSX":
+    case "EditorConfig":
     case "Text":
+    case "Gettext Catalog":
     case "Ignore List":
       return "#CCCCCC";
     case "PureScript":
@@ -157,12 +159,16 @@ const languageColors = (lang) => {
       return "#00cafe";
     case "AspectJ":
       return "#a957b0";
+    case "Jinja":
+      return "#A52A22";
     case "Web Ontology Language":
       return "#9cc9dd";
     case "xBase":
       return "#403a40";
     case "Eiffel":
       return "#946d57";
+    case "Nunjucks":
+      return "#3d8137";
     case "RAML":
       return "#77d9fb";
     case "MTML":
