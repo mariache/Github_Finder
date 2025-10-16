@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import axios from "axios";
 import GithubContext from "./githubContext";
 import GithubReducer from "./githubReducer";
@@ -28,7 +28,6 @@ if (process.env.NODE_ENV !== "production") {
 const GithubState = (props) => {
   const initialState = {
     user: {},
-    // users: [],
     users: JSON.parse(localStorage.getItem("users")) || [],
     repos: [],
     sortedRepos: [],
