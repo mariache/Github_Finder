@@ -42,7 +42,7 @@ const SearchCard = () => {
               style={{ width: 100, margin: "0 auto 1rem" }}
             />
             <button className="btn btn-ghb btn-block" onClick={clearUsers}>
-              Clear result
+              Clear Result
             </button>
           </div>
         </div>
