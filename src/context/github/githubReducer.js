@@ -17,7 +17,6 @@ export default (state, action) => {
     case SET_LOADING:
       return {
         ...state,
-        users: [],
         repos: [],
         loading: true,
       };
