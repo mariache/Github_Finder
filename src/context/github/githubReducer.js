@@ -12,7 +12,7 @@ import {
 
 import moment from "moment";
 
-export default (state, action) => {
+const githubReducer = (state, action) => {
   switch (action.type) {
     case SET_LOADING:
       return {
@@ -49,7 +49,7 @@ export default (state, action) => {
       return {
         ...state,
         repos: action.payload,
-        loadind: false,
+        loading: false,
       };
     // @TODO (not properly implemented yet)
     case GET_SORTED_REPOS:
@@ -63,9 +63,11 @@ export default (state, action) => {
       return {
         ...state,
         repos: action.payload,
-        loadind: false,
+        loading: false,
       };
     default:
       return state;
   }
 };
+
+export default githubReducer;

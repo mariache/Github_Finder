@@ -3,21 +3,17 @@ import React, { useEffect, useState } from "react";
 const Toast = ({ message, onClose, duration = 3000 }) => {
   const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
-    // Start the animation when mounted
-    setVisible(true);
-
-    // Auto-dismiss after duration
-    const timer = setTimeout(() => handleClose(), duration);
-    return () => clearTimeout(timer);
-  }, [duration]);
-
   const handleClose = () => {
-    // Start fade-out animation
     setVisible(false);
-    // Wait for animation to finish before unmounting
     setTimeout(onClose, 300);
   };
+
+  useEffect(() => {
+    setVisible(true);
+    const timer = setTimeout(handleClose, duration);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [duration]);
 
   return (
     <div
