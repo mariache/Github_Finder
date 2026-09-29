@@ -37,13 +37,8 @@ const SearchForm = () => {
           onChange={onChange}
           style={{ marginTop: "0.5rem" }}
         />
-        <input
-          className="form__button_dark btn"
-          type="submit"
-          value="Search"
-        />
+        <input className="form__button_dark btn" type="submit" value="Search" />
       </form>
-
     </>
   );
 };
