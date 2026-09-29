@@ -14,7 +14,11 @@ const Home = () => {
 
   useEffect(() => {
     const q = new URLSearchParams(location.search).get("q");
-    if (q && q !== lastQuery.current) {
+    if (!q) {
+      lastQuery.current = null;
+      return;
+    }
+    if (q !== lastQuery.current) {
       lastQuery.current = q;
       searchUsers(q);
     }
