@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import ghb from "../../assets/images/ghb.png";
 import GithubContext from "../../context/github/githubContext";
 import SearchForm from "./SearchForm";
@@ -8,7 +8,13 @@ const SearchCard = () => {
   const githubContext = useContext(GithubContext);
   const { clearUsers, users } = githubContext;
   const location = useLocation();
+  const history = useHistory();
   const query = new URLSearchParams(location.search).get("q");
+
+  const onClear = () => {
+    clearUsers();
+    history.push("/");
+  };
 
   return (
     <>
@@ -49,7 +55,7 @@ const SearchCard = () => {
                 Search results for <strong>"{query}"</strong> — {users.length} user{users.length !== 1 ? "s" : ""} found
               </p>
             )}
-            <button className="btn btn-ghb" style={{ display: "block", margin: "0.5rem auto" }} onClick={clearUsers}>
+            <button className="btn btn-ghb" style={{ display: "block", margin: "0.5rem auto" }} onClick={onClear}>
               Clear result
             </button>
           </div>
