@@ -32,14 +32,10 @@ const languageColors = (lang) => {
       return "#701516";
     case "C++":
       return "#f34b7d";
-    case "Per;":
-      return "#0298c3";
     case "Swift":
       return "#ffac45";
     case "Objective-C":
       return "#438eff";
-    case "Kotin":
-      return "#F18E33";
     case "C":
       return "#555555";
     case "R":

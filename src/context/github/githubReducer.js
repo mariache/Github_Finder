@@ -49,7 +49,7 @@ export default (state, action) => {
       return {
         ...state,
         repos: action.payload,
-        loadind: false,
+        loading: false,
       };
     // @TODO (not properly implemented yet)
     case GET_SORTED_REPOS:
@@ -63,7 +63,7 @@ export default (state, action) => {
       return {
         ...state,
         repos: action.payload,
-        loadind: false,
+        loading: false,
       };
     default:
       return state;

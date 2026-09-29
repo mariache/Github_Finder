@@ -48,7 +48,7 @@ const User = ({ match }) => {
     clearSorted();
   };
 
-  if (loading) return Spinner;
+  if (loading) return <Spinner />;
 
   return (
     <div className="container">

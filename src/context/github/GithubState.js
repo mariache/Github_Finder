@@ -14,16 +14,8 @@ import {
   CLEAR_SORTED,
 } from "../constants";
 
-let githubClientId;
-let githubClientSecret;
-
-if (process.env.NODE_ENV !== "production") {
-  githubClientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
-  githubClientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
-} else {
-  githubClientId = process.env.GITHUB_CLIENT_ID;
-  githubClientSecret = process.env.GITHUB_CLIENT_SECRET;
-}
+const githubToken = process.env.REACT_APP_GITHUB_TOKEN;
+const authHeaders = githubToken ? { Authorization: `Bearer ${githubToken}` } : {};
 
 const GithubState = (props) => {
   const initialState = {
@@ -43,9 +35,7 @@ const GithubState = (props) => {
 
   const searchUsers = async (text) => {
     setLoading();
-    const res = await axios.get(`https://api.github.com/search/users?q=${text}&client_id=
-    ${githubClientId}&client_secret=
-    ${githubClientSecret}`);
+    const res = await axios.get(`https://api.github.com/search/users?q=${text}`, { headers: authHeaders });
 
     dispatch({
       type: SEARCH_USERS,
@@ -73,9 +63,7 @@ const GithubState = (props) => {
 
   const getUser = async (username) => {
     setLoading();
-    const res = await axios.get(`https://api.github.com/users/${username}?client_id=
-    ${githubClientId}&client_secret=
-    ${githubClientSecret}`);
+    const res = await axios.get(`https://api.github.com/users/${username}`, { headers: authHeaders });
 
     dispatch({
       type: GET_USER,
@@ -86,9 +74,7 @@ const GithubState = (props) => {
   // @TODO (not in use yet)
   const getPaginatedUserRepos = async (username, nPerPage, nPage) => {
     setLoading();
-    const res = await axios.get(`https://api.github.com/users/${username}/repos?page=${nPage}&per_page=${nPerPage}&sort=created:asc&client_id=
-    ${githubClientId}&client_secret=
-    ${githubClientSecret}`);
+    const res = await axios.get(`https://api.github.com/users/${username}/repos?page=${nPage}&per_page=${nPerPage}&sort=created:asc`, { headers: authHeaders });
 
     dispatch({
       type: GET_PAGINATED_REPOS,
@@ -98,9 +84,7 @@ const GithubState = (props) => {
 
   const getUserRepos = async (username) => {
     setLoading();
-    const res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=60&sort=created:asc&client_id=
-    ${githubClientId}&client_secret=
-    ${githubClientSecret}`);
+    const res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=60&sort=created:asc`, { headers: authHeaders });
 
     dispatch({
       type: GET_REPOS,
