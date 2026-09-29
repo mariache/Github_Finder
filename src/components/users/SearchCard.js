@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useLocation } from "react-router-dom";
 import ghb from "../../assets/images/ghb.png";
 import GithubContext from "../../context/github/githubContext";
 import SearchForm from "./SearchForm";
@@ -6,6 +7,8 @@ import SearchForm from "./SearchForm";
 const SearchCard = () => {
   const githubContext = useContext(GithubContext);
   const { clearUsers, users } = githubContext;
+  const location = useLocation();
+  const query = new URLSearchParams(location.search).get("q");
 
   return (
     <>
@@ -41,7 +44,12 @@ const SearchCard = () => {
               className="logo"
               style={{ width: 100, margin: "0 auto 1rem" }}
             />
-            <button className="btn btn-ghb btn-block" onClick={clearUsers}>
+            {query && (
+              <p className="text-secondary" style={{ textAlign: "center", marginBottom: "0.5rem" }}>
+                Search results for <strong>"{query}"</strong> — {users.length} user{users.length !== 1 ? "s" : ""} found
+              </p>
+            )}
+            <button className="btn btn-ghb" style={{ display: "block", margin: "0.5rem auto" }} onClick={clearUsers}>
               Clear result
             </button>
           </div>
