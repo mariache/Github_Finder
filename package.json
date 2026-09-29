@@ -16,10 +16,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write src",
+    "format:check": "prettier --check src"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": ["react-app", "prettier"]
   },
   "browserslist": {
     "production": [
@@ -36,7 +38,9 @@
   "devDependencies": {
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
+    "eslint-config-prettier": "^10.1.8",
     "jest": "^26.6.3",
+    "prettier": "^3.9.9",
     "react-test-renderer": "^17.0.1"
   }
 }

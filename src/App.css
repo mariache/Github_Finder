@@ -120,7 +120,8 @@ img {
   margin: 0.7rem 0;
   width: 100%;
   height: auto;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 1.6px 3.6px 0px,
+  box-shadow:
+    rgba(0, 0, 0, 0.3) 0px 1.6px 3.6px 0px,
     rgba(0, 0, 0, 0.15) 0px 0.3px 0.9px 0px;
   background-color: #fff;
 }
@@ -142,12 +143,14 @@ img {
   background-color: rgb(255, 255, 255);
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 1.6px 3.6px 0px,
+  box-shadow:
+    rgba(0, 0, 0, 0.3) 0px 1.6px 3.6px 0px,
     rgba(0, 0, 0, 0.15) 0px 0.3px 0.9px 0px;
 }
 
 .repo:hover {
-  box-shadow: rgba(0, 0, 0, 0.7) 0px 1.6px 3.6px 0px,
+  box-shadow:
+    rgba(0, 0, 0, 0.7) 0px 1.6px 3.6px 0px,
     rgba(0, 0, 0, 0.45) 0px 0.3px 0.9px 0px;
   transform: scale(1.025);
 }

@@ -51,11 +51,19 @@ const SearchCard = () => {
               style={{ width: 100, margin: "0 auto 1rem" }}
             />
             {query && (
-              <p className="text-secondary" style={{ textAlign: "center", marginBottom: "0.5rem" }}>
-                Search results for <strong>"{query}"</strong> — {users.length} user{users.length !== 1 ? "s" : ""} found
+              <p
+                className="text-secondary"
+                style={{ textAlign: "center", marginBottom: "0.5rem" }}
+              >
+                Search results for <strong>"{query}"</strong> — {users.length}{" "}
+                user{users.length !== 1 ? "s" : ""} found
               </p>
             )}
-            <button className="btn btn-ghb" style={{ display: "block", margin: "0.5rem auto" }} onClick={onClear}>
+            <button
+              className="btn btn-ghb"
+              style={{ display: "block", margin: "0.5rem auto" }}
+              onClick={onClear}
+            >
               Clear result
             </button>
           </div>
