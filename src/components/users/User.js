@@ -43,9 +43,9 @@ const User = ({ match }) => {
   } = user;
 
   const onHandleBack = () => {
-    history.push("/");
     clearCurrent();
     clearSorted();
+    history.goBack();
   };
 
   if (loading) return <Spinner />;
