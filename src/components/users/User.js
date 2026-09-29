@@ -167,7 +167,7 @@ const User = ({ match }) => {
           </ul>
         </div>
       </div>
-      <Repos repos={repos} />
+      <Repos repos={repos} loading={loading} />
     </div>
   );
 };

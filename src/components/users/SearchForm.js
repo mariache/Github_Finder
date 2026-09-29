@@ -1,12 +1,18 @@
-import React, { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState, useContext, useEffect } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 import AlertContext from "../../context/alert/alertContext";
 
 const SearchForm = () => {
   const alertContext = useContext(AlertContext);
   const history = useHistory();
+  const location = useLocation();
 
   const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    const q = new URLSearchParams(location.search).get("q");
+    if (q) setSearch(q);
+  }, [location.search]);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -15,7 +21,6 @@ const SearchForm = () => {
       return;
     }
     history.push(`/?q=${encodeURIComponent(search.trim())}`);
-    setSearch("");
   };
 
   const onChange = (e) => setSearch(e.target.value);
