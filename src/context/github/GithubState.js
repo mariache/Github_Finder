@@ -14,7 +14,10 @@ import {
   CLEAR_SORTED,
 } from "../constants";
 
-const githubToken = process.env.REACT_APP_GITHUB_TOKEN;
+const githubToken = process.env.NODE_ENV !== "production"
+  ? process.env.REACT_APP_GITHUB_TOKEN
+  : process.env.GITHUB_TOKEN;
+
 const authHeaders = githubToken ? { Authorization: `Bearer ${githubToken}` } : {};
 
 const GithubState = (props) => {
