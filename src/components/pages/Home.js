@@ -21,10 +21,11 @@ const Home = () => {
   }, [location.search, searchUsers]);
 
   useEffect(() => {
-    if (!loading && lastQuery.current && users.length === 0) {
+    const q = new URLSearchParams(location.search).get("q");
+    if (!loading && q && lastQuery.current === q && users.length === 0) {
       setToast("No user with that profile exists 🚫");
     }
-  }, [loading, users]);
+  }, [loading, users, location.search]);
 
   return (
     <>
