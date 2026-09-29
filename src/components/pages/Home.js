@@ -14,17 +14,22 @@ const Home = () => {
 
   useEffect(() => {
     const q = new URLSearchParams(location.search).get("q");
-    if (q && q !== lastQuery.current) {
+    if (!q) {
+      lastQuery.current = null;
+      return;
+    }
+    if (q !== lastQuery.current) {
       lastQuery.current = q;
       searchUsers(q);
     }
   }, [location.search, searchUsers]);
 
   useEffect(() => {
-    if (!loading && lastQuery.current && users.length === 0) {
+    const q = new URLSearchParams(location.search).get("q");
+    if (!loading && q && lastQuery.current === q && users.length === 0) {
       setToast("No user with that profile exists 🚫");
     }
-  }, [loading, users]);
+  }, [loading, users, location.search]);
 
   return (
     <>
