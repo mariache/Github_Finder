@@ -1,32 +1,21 @@
 import React, { useState, useContext } from "react";
-import GithubContext from "../../context/github/githubContext";
+import { useHistory } from "react-router-dom";
 import AlertContext from "../../context/alert/alertContext";
-import Toast from "../layout/Toast";
 
 const SearchForm = () => {
-  const githubContext = useContext(GithubContext);
   const alertContext = useContext(AlertContext);
+  const history = useHistory();
 
   const [search, setSearch] = useState("");
-  const [toast, setToast] = useState(null);
 
-  const onSubmit = async (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
     if (search.trim() === "") {
       alertContext.setAlert("Please enter something", "light");
       return;
     }
-
-    // Call GitHub search
-    const users = await githubContext.searchUsers(search);
-
-    // Reset search bar
+    history.push(`/?q=${encodeURIComponent(search.trim())}`);
     setSearch("");
-
-    // If no users found, show toast
-    if (!users || users.length === 0) {
-      setToast("No user with that profile exists 🚫");
-    }
   };
 
   const onChange = (e) => setSearch(e.target.value);
@@ -50,7 +39,6 @@ const SearchForm = () => {
         />
       </form>
 
-      {toast && <Toast message={toast} onClose={() => setToast(null)} />}
     </>
   );
 };
