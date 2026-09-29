@@ -14,11 +14,17 @@ import {
   CLEAR_SORTED,
 } from "../constants";
 
-const githubToken = process.env.NODE_ENV !== "production"
-  ? process.env.REACT_APP_GITHUB_TOKEN
-  : process.env.GITHUB_TOKEN;
+const clientId = process.env.NODE_ENV !== "production"
+  ? process.env.REACT_APP_GITHUB_CLIENT_ID
+  : process.env.GITHUB_CLIENT_ID;
 
-const authHeaders = githubToken ? { Authorization: `Bearer ${githubToken}` } : {};
+const clientSecret = process.env.NODE_ENV !== "production"
+  ? process.env.REACT_APP_GITHUB_CLIENT_SECRET
+  : process.env.GITHUB_CLIENT_SECRET;
+
+const authHeaders = clientId && clientSecret
+  ? { Authorization: `Basic ${btoa(`${clientId}:${clientSecret}`)}` }
+  : {};
 
 const GithubState = (props) => {
   const initialState = {
