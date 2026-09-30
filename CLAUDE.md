@@ -1,5 +1,9 @@
 # Claude Code Rules
 
+## Branching
+
+Before starting any new batch of work, always ask: **new branch or keep working in the current one?**
+
 ## Attribution
 
 **PR titles** must be prefixed with `[AI-GEN]`, e.g. `[AI-GEN] Fix false toast on clear`.
