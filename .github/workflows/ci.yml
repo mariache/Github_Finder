@@ -30,12 +30,9 @@ jobs:
       - name: Lint
         run: npx eslint src --ext .js,.jsx --max-warnings 0
 
+
       - name: Test
         run: npm test -- --watchAll=false --passWithNoTests
-        env:
-          CI: true
 
       - name: Build
         run: npm run build
-        env:
-          CI: true

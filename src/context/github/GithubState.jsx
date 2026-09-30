@@ -14,15 +14,8 @@ import {
   CLEAR_SORTED,
 } from "../constants";
 
-const clientId =
-  process.env.NODE_ENV !== "production"
-    ? process.env.REACT_APP_GITHUB_CLIENT_ID
-    : process.env.GITHUB_CLIENT_ID;
-
-const clientSecret =
-  process.env.NODE_ENV !== "production"
-    ? process.env.REACT_APP_GITHUB_CLIENT_SECRET
-    : process.env.GITHUB_CLIENT_SECRET;
+const clientId = import.meta.env.VITE_GITHUB_CLIENT_ID;
+const clientSecret = import.meta.env.VITE_GITHUB_CLIENT_SECRET;
 
 const authHeaders =
   clientId && clientSecret
