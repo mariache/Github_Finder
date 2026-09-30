@@ -1,5 +1,6 @@
 [build]
 publish="dist"
+command="npm ci --legacy-peer-deps && npm run build"
 
 [build.environment]
-NODE_VERSION="18"
+NODE_VERSION="20"
