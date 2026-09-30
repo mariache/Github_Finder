@@ -14,8 +14,8 @@ import {
   CLEAR_SORTED,
 } from "../constants";
 
-const clientId = import.meta.env.VITE_GITHUB_CLIENT_ID;
-const clientSecret = import.meta.env.VITE_GITHUB_CLIENT_SECRET;
+const clientId = import.meta.env.GITHUB_CLIENT_ID;
+const clientSecret = import.meta.env.GITHUB_CLIENT_SECRET;
 
 const authHeaders =
   clientId && clientSecret
