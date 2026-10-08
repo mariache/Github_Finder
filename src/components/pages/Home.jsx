@@ -24,7 +24,7 @@ const Home = () => {
     lastQuery.current = q;
     searchFired.current = false;
     searchUsers(q);
-  }, [location.key, searchUsers]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [location.key]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Only show the toast after a real search cycle (loading true → false).
   useEffect(() => {

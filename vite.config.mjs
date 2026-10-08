@@ -6,7 +6,14 @@ export default defineConfig({
   build: {
     outDir: "build",
   },
-  // Expose GITHUB_* env vars (matching existing Netlify variable names)
-  // in addition to the default VITE_* prefix.
-  envPrefix: ["VITE_", "GITHUB_"],
+  // Explicitly embed GitHub credentials at build time.
+  // envPrefix alone may not pick up Netlify shell env vars reliably.
+  define: {
+    "import.meta.env.GITHUB_CLIENT_ID": JSON.stringify(
+      process.env.GITHUB_CLIENT_ID
+    ),
+    "import.meta.env.GITHUB_CLIENT_SECRET": JSON.stringify(
+      process.env.GITHUB_CLIENT_SECRET
+    ),
+  },
 });
